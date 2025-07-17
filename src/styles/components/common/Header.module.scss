@@ -1,0 +1,136 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding-inline: 2em;
+    justify-content: center;
+    z-index: 5;
+    transition: 0.5s ease-out;
+    background-color: #fff;
+    @include sp {
+        padding-inline: 0;
+    }
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0 2em;
+        max-width: $articleMaxWidth;
+        @include sp {
+            padding: 3vw 0;
+            justify-content: center;
+        }
+        h1 {
+            position: relative;
+            max-width: 25rem;
+            width: 100%;
+            @include sp {
+                width: 60vw;
+                padding-right: 2vw;
+                z-index: 201;
+            }
+            .linkTop {
+                position: relative;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        nav {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            justify-content: flex-end;
+            margin-left: auto;
+            align-self: stretch;
+            align-items: center;
+            gap: 0 2em;
+            @include sp {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                height: 100dvh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10vw 0;
+                background-color: #fff;
+                translate: 100vw;
+                transition: 0.3s ease-out;
+                opacity: 0;
+                gap: 4vw 0;
+                justify-content: center;
+                &.is-open {
+                    translate: 0;
+                    opacity: 1;
+                }
+            }
+            .itemLink {
+                font-size: FZ(16);
+                padding-block: 1.6em;
+                font-weight: 500;
+                @include sp {
+                    padding-block: 3vw;
+                }
+            }
+        }
+    }
+}
+.hamburgerButton {
+    position: fixed;
+    top: 1vw;
+    right: 2vw;
+    width: 11vw;
+    aspect-ratio: 1;
+
+    // border: solid 2px #fff;
+    z-index: 100;
+    display: none;
+    background-color: $base-white;
+    border-radius: 2vw;
+
+    // border: 1px solid #000;
+    @include sp {
+        display: block;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 3px;
+        background-color: #505050;
+        transition: 0.3s ease-out;
+        &:nth-of-type(1) {
+            translate: -50% calc(-50% - 8px);
+        }
+        &:nth-of-type(2) {
+            translate: -50% -50%;
+        }
+        &:nth-of-type(3) {
+            translate: -50% calc(-50% + 8px);
+        }
+    }
+    &.is-open {
+        span {
+            transition: 0.3s ease-out;
+            &:nth-of-type(1) {
+                translate: -50% -50%;
+                rotate: 45deg;
+            }
+            &:nth-of-type(2) {
+                translate: 150% -50%;
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                translate: -50% -50%;
+                rotate: -45deg;
+            }
+        }
+    }
+}

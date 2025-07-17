@@ -1,0 +1,788 @@
+/* =================================
+ * 	熊本市中央公民館 TOPページ
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.itemH2 {
+    font-size: FZ(30);
+    color: $base-orange;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    @include sp {
+        font-size: FZ(26);
+    }
+}
+.sidebarH2 {
+    font-size: FZ(18);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-top: 1em;
+    @include sp {
+        font-size: FZ(14);
+        font-weight: 400;
+    }
+}
+
+/* =================================
+ * HERO
+ * ------------------------------ */
+.containerHero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    @include sp {
+        height: 60vw;
+        padding-top: 10vw;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* =================================
+ * お知らせ
+ * ------------------------------ */
+.containerNews {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        .itemHeadPdf {
+            font-size: FZ(16);
+            color: $dark-blue;
+            margin-top: 2em;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .newsList {
+            position: relative;
+            width: 100%;
+            max-width: 80rem;
+            font-size: inherit;
+            margin-top: 5em;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3em 0;
+            li {
+                position: relative;
+                display: grid;
+                grid-column: span 2;
+                grid-template-columns: subgrid;
+                font-size: inherit;
+                gap: 0 5em;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2vw 0;
+                }
+                .date {
+                    font-size: FZ(16);
+                }
+                .wrapDetails {
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em 0;
+                    .title,
+                    .body,
+                    .itemPdf {
+                        font-size: FZ(16);
+                        letter-spacing: 0.04em;
+                    }
+                    .itemPdf {
+                        color: $dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 施設のご案内
+ * ------------------------------ */
+.containerFacilityGuide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
+    .boxHead {
+        background-color: $base-orange;
+        color: $base-white;
+        font-size: FZ(30);
+        font-weight: 700;
+        padding: 2em 0;
+        width: 100%;
+        max-width: 80rem;
+        text-align: center;
+        @include sp {
+            max-width: unset;
+            font-size: FZ(24);
+        }
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        margin-top: 5em;
+        .blockFacilityGuide {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3em;
+            margin-top: 5em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 4vw 0;
+                margin-top: 6vw;
+            }
+            li {
+                position: relative;
+                width: 100%;
+                img {
+                    width: 100%;
+                    aspect-ratio: 2.38;
+                    @include sp {
+                        border-radius: 2vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 施設ご利用について
+ * ------------------------------ */
+.containerFacilityDetails {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+        margin-top: 14vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        .boxHead {
+            width: 100%;
+            margin-top: 3em;
+            position: relative;
+            font-size: inherit;
+            border: 1px solid #888;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            padding: 3em;
+            @include sp {
+                padding: 4vw 2vw;
+            }
+            h3 {
+                font-size: FZ(20);
+                font-weight: 300;
+                letter-spacing: 0.08em;
+                display: flex;
+                justify-content: center;
+                border-bottom: 1px solid #888;
+                padding-bottom: 0.8em;
+                max-width: 111rem;
+                @include sp {
+                    border-bottom: unset;
+                    margin-top: 2vw;
+                    text-align: center;
+                }
+            }
+            ul {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                max-width: 111rem;
+                gap: 2em 0;
+                padding-block: 1em;
+                counter-reset: number 0;
+                li {
+                    position: relative;
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em 0;
+                    padding-left: 1em;
+                    h4 {
+                        font-size: FZ(16);
+                        font-weight: 600;
+                        letter-spacing: 0.04em;
+                        &::before {
+                            content: counter(number) ".";
+                            counter-increment: number 1;
+                            font-weight: 400;
+                            margin-right: 0.3em;
+                        }
+                    }
+                    p {
+                        font-size: FZ(16);
+                        text-align: 0.04em;
+                        line-height: 1.6em;
+                        padding-left: 1.2em;
+                    }
+                }
+            }
+            .wrapTel {
+                align-self: flex-end;
+                font-size: FZ(14);
+                display: flex;
+                align-items: center;
+                gap: 0 0.5em;
+                .itemTel {
+                    position: relative;
+                    font-size: inherit;
+                    padding-left: 1.1em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 60%;
+                        translate: 0 -50%;
+                        width: 0.9em;
+                        @include svg-icon-phone("181818");
+                    }
+                }
+            }
+        }
+        .boxFoot {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8em 0;
+            margin-top: 2em;
+            width: 100%;
+            max-width: 111rem;
+            h3 {
+                font-size: FZ(20);
+                font-weight: 700;
+            }
+            .sidebarH3 {
+                font-size: FZ(16);
+                font-weight: 700;
+            }
+            ul {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                gap: 2em 0;
+                margin-top: 1em;
+                li {
+                    font-size: FZ(16);
+                    line-height: 1.8em;
+                    letter-spacing: 0.04em;
+                    &::before {
+                        content: "・";
+                        margin-right: 0.5em;
+                    }
+                }
+            }
+            .wrapQr {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                margin-top: 2em;
+                gap: 0.5em 0;
+                p {
+                    font-size: FZ(16);
+                    letter-spacing: 0.04em;
+                }
+                a {
+                    font-size: FZ(16);
+                    color: $dark-blue;
+                }
+                img {
+                    width: 10rem;
+                    aspect-ratio: 1;
+                    @include sp {
+                        display: none;
+                    }
+                }
+            }
+            .wrapPdf {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                gap: 1em;
+                margin-top: 3em;
+                h4 {
+                    font-size: FZ(20);
+                    font-weight: 300;
+                }
+                a {
+                    font-size: FZ(16);
+                    color: $dark-blue;
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 施設ご利用について
+ * ------------------------------ */
+.containerFacilityHours {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+        margin-top: 14vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        ul {
+            width: 100%;
+            position: relative;
+            font-size: inherit;
+            margin-top: 3em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #646464;
+            border-left: 1px solid #646464;
+            @include sp {
+                margin-top: 6vw;
+            }
+            li {
+                position: relative;
+                font-size: inherit;
+                grid-column: span 3;
+                display: grid;
+                grid-template-columns: subgrid;
+                h3 {
+                    border-right: 1px solid #646464;
+                    border-bottom: 1px solid #646464;
+                    display: flex;
+                    justify-content: center;
+                    font-size: FZ(16);
+                    background-color: #dcdcdc;
+                    padding-block: 0.5em;
+                    font-weight: 600;
+                }
+                h4 {
+                    font-size: FZ(16);
+                    text-align: center;
+                    border-right: 1px solid #646464;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid #646464;
+                }
+                div {
+                    font-size: FZ(16);
+                    text-align: center;
+                    border-bottom: 1px solid #646464;
+                    border-right: 1px solid #646464;
+                    padding-block: 0.8em;
+                }
+                &.place02 {
+                    h4 {
+                        grid-row: span 2;
+                    }
+                }
+                &.place03 {
+                    h4 {
+                        grid-row: span 2;
+                    }
+                    p {
+                        grid-column: span 2;
+                        text-align: center;
+                        font-size: FZ(16);
+                        padding-block: 0.8em;
+                        border-bottom: 1px solid #646464;
+                        border-right: 1px solid #646464;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 講座のご案内
+ * ------------------------------ */
+.containerCourseGuide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+        margin-top: 14vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        .announce {
+            font-size: FZ(18);
+            text-align: center;
+            margin-top: 1em;
+            letter-spacing: 0.04em;
+            line-height: 2em;
+            font-weight: 500;
+            @include sp {
+                font-size: FZ(14);
+                font-weight: 400;
+            }
+        }
+        .wrapImage {
+            font-size: inherit;
+            display: contents;
+            @include sp {
+                display: block;
+                position: relative;
+                margin-top: 8vw;
+            }
+        }
+        .itemH3 {
+            display: flex;
+            font-size: inherit;
+            width: 100%;
+            justify-content: flex-end;
+            max-width: 80rem;
+            margin-top: 4em;
+            margin-bottom: 1em;
+            padding-right: 2em;
+            @include sp {
+                position: absolute;
+                left: 50%;
+                top: 48%;
+                translate: -50% -50%;
+                margin-top: unset;
+                padding-right: unset;
+                margin-bottom: unset;
+                width: fit-content;
+                max-width: unset;
+            }
+            h3 {
+                border: 2px solid;
+                font-size: FZ(32);
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                padding: 0.3em 0.5em;
+                border-radius: 0.4rem;
+            }
+        }
+        .listImage {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 80rem;
+            @include sp {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20vw 0;
+                li {
+                    &:nth-of-type(3) {
+                        translate: 50% 0;
+                    }
+                }
+            }
+        }
+        .linkForm {
+            display: flex;
+            justify-content: center;
+            font-size: inherit;
+            gap: 1em;
+            margin-top: 3em;
+            @include sp {
+                flex-direction: column;
+                margin-top: 4vw;
+            }
+            a {
+                color: $base-white;
+                background-color: #980000;
+                font-size: FZ(16);
+                padding: 0.8em 1em;
+                letter-spacing: 0.08em;
+                border-radius: 100vmax;
+                transition: 0.3s ease-out;
+                @include hover {
+                    background-color: #f00;
+                }
+                @include sp {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * アクセス
+ * ------------------------------ */
+.containerAccess {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+        margin-top: 14vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        .boxContents {
+            display: flex;
+            gap: 0 3em;
+            font-size: inherit;
+            width: 100%;
+            margin-top: 5em;
+            @include sp {
+                flex-direction: column;
+                gap: 4vw 0;
+            }
+            .wrapMap {
+                width: 50%;
+                @include sp {
+                    width: 100%;
+                }
+                iframe {
+                    width: 100%;
+                    aspect-ratio: 1/1.5;
+                }
+            }
+            .wrapDetails {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 2em 0;
+                font-size: inherit;
+                flex: 1;
+                & > div {
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2em 0;
+                    address {
+                        font-size: FZ(16);
+                        display: flex;
+                        gap: 0 0.5em;
+                        line-height: 1.8em;
+                    }
+                    .itemTel {
+                        font-size: FZ(16);
+                        display: flex;
+                        gap: 0 0.5em;
+                        line-height: 1.8em;
+                    }
+                    p {
+                        font-size: FZ(16);
+                        letter-spacing: 0.04em;
+                        line-height: 1.8em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 白川公園茶室について
+ * ------------------------------ */
+.containerTearoom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+        margin-top: 14vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        gap: 3em 0;
+        @include sp {
+            gap: 8vw 0;
+        }
+        dl {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: inherit;
+            gap: 0.8em 0;
+            dt {
+                font-size: FZ(20);
+                font-weight: 300;
+            }
+            dd {
+                font-size: FZ(16);
+                text-align: center;
+                line-height: 1.6em;
+                p {
+                    font-size: FZ(16);
+                }
+                div {
+                    display: flex;
+                    font-size: inherit;
+                    align-items: center;
+                    gap: 0 1em;
+                    a {
+                        font-size: inherit;
+                        color: $dark-blue;
+                    }
+                }
+                nav {
+                    display: flex;
+                    align-items: center;
+                    font-size: inherit;
+                    justify-content: center;
+                    gap: 0 1.6em;
+                    margin-top: 0.5em;
+                    @include sp {
+                        flex-direction: column;
+                        gap: 2vw 0;
+                    }
+                    a {
+                        font-size: inherit;
+                        color: $dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 喫茶・売店 しらかわのほとり
+ * ------------------------------ */
+.containerStore {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+        margin-top: 14vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        gap: 3em 0;
+        .boxContents {
+            display: flex;
+            gap: 0 3em;
+            font-size: inherit;
+            @include sp {
+                flex-direction: column;
+                gap: 6vw 0;
+            }
+            h3 {
+                font-size: FZ(20);
+                font-weight: 300;
+            }
+            .wrapInfo {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                gap: 1em 0;
+                @include sp {
+                    width: 100%;
+                    gap: 2vw 0;
+                    .itemImage {
+                        img {
+                            border-radius: 2vw;
+                        }
+                    }
+                }
+                .itemTel {
+                    font-size: FZ(16);
+                    a {
+                        font-size: inherit;
+                        color: $dark-blue;
+                        &::before {
+                            content: "℡";
+                        }
+                    }
+                }
+            }
+            .wrapAnnounce {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                gap: 1em 0;
+                hr {
+                    border-top: 1px solid;
+                }
+                p {
+                    font-size: FZ(16);
+                    line-height: 1.8em;
+                }
+            }
+        }
+        .navLink {
+            display: grid;
+            font-size: inherit;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0 1em;
+            margin-top: 3em;
+            @include sp {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2vw;
+            }
+            img {
+                aspect-ratio: 292/63;
+                object-fit: cover;
+            }
+        }
+    }
+}

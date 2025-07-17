@@ -1,0 +1,67 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c0c0c0;
+    color: #fff;
+    padding: 3em 2em 1em;
+    gap: 1em 0;
+    @include sp {
+        padding: 8vw 0 4vw;
+    }
+    .itemTel {
+        position: relative;
+        font-size: FZ(16);
+        letter-spacing: 0.08em;
+        padding-left: 1.2em;
+        @include sp {
+            font-size: FZ(14);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 53%;
+            translate: 0 -50%;
+            left: 0;
+            width: 0.9em;
+            @include svg-icon-phone("fff");
+        }
+    }
+    .name {
+        font-size: FZ(16);
+        display: flex;
+        align-items: center;
+        gap: 0 1em;
+    }
+    .boxSns {
+        position: relative;
+        font-size: inherit;
+        display: grid;
+        grid-template-columns: repeat(2, 2.8em);
+        gap: 0 1.4em;
+        margin-top: 1em;
+        @include sp {
+            margin-top: 4vw;
+        }
+        li {
+            position: relative;
+            width: 100%;
+            .itemSns {
+                img {
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .copyright {
+        width: 100%;
+        padding: 0.5em 0;
+        display: flex;
+        justify-content: center;
+        font-size: FZ(14);
+        letter-spacing: 0.04em;
+    }
+}
