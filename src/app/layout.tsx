@@ -1,5 +1,5 @@
 /* =======================================
- * 熊本市中央公民館 Layout
+ *センターリバー Layout
  * URL:src/app/layout.tsx
  * Created: 2025-07-14
  * Last updated: 2025-07-14
@@ -8,7 +8,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.scss';
 import { Noto_Sans_JP } from 'next/font/google';
-import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
@@ -34,16 +33,16 @@ export const metadata: Metadata = {
       type: 'website',
       images: [
         {
-          url: '/ogp.jpg',
+          url: '/ogp.png',
           width: 1200,
           height: 630,
-          alt: '熊本市中央公民館のOGP画像',
+          alt: 'センターリバーのOGP画像',
         },
       ],
     },
   }),
-  title: ' 熊本市中央公民館',
-  description: isRealProduction ? '熊本市中央公民館' : undefined,
+  title: 'センターリバー',
+  description: isRealProduction ? 'センターリバー' : undefined,
   robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
   icons: {
     icon: [
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
       // { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon/favicon.ico', type: 'image/x-icon' },
     ],
-    // apple: [{ url: 'favicon/apple-touch-icon.png', sizes: '180x180' }],
+    apple: [{ url: '/favicon/apple-touch-icon.png', sizes: '180x180' }],
     // other: [
     //   {
     //     rel: 'icon',
@@ -85,7 +84,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
         <main>{children}</main>
         <Footer />
       </body>

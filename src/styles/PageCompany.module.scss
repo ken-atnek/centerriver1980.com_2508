@@ -1,0 +1,180 @@
+/* =================================
+ * 	店舗案内 / 会社概要
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+.itemH3 {
+    font-size: FZ(45);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+.sidebarH3 {
+    font-size: FZ(18);
+    text-transform: uppercase;
+    margin-top: 0.5em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.containerLocations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 2em 5em;
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        .itemH3 {
+            margin-top: 1.6em;
+        }
+        .sidebarH3 {
+            color: #cc0000;
+        }
+        .ListStoreName {
+            position: relative;
+            width: 100%;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4em 0;
+            margin-top: 5em;
+            li {
+                position: relative;
+                font-size: inherit;
+                display: grid;
+                grid-column: span 3;
+                grid-template-columns: subgrid;
+                gap: 2em 1em;
+                h4 {
+                    grid-column: span 3;
+                    color: $base-green;
+                    font-size: FZ(18);
+                    letter-spacing: 0.12em;
+                    font-weight: 500;
+                    border-bottom: solid 2px #eaeaea;
+                    padding-bottom: 0.5em;
+                    &::before {
+                        content: "●";
+                    }
+                }
+                .itemName {
+                    font-size: FZ(16);
+                    letter-spacing: 0.12em;
+                    text-decoration: underline solid 1px;
+                }
+            }
+        }
+        .storeListDetails {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            margin-top: 8em;
+            font-size: inherit;
+            gap: 5em 0;
+            li {
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                font-size: inherit;
+                gap: 3em 2em;
+                h4 {
+                    grid-column: span 2;
+                    font-size: FZ(24);
+                    letter-spacing: 0.12em;
+                    font-weight: 500;
+                    border-bottom: solid 2px #eaeaea;
+                    padding-bottom: 0.3em;
+                }
+                .storeItem {
+                    position: relative;
+                    grid-column: span 2;
+                    display: grid;
+                    grid-template-columns: subgrid;
+                    font-size: inherit;
+                    .wrapDetails {
+                        font-size: inherit;
+                        display: flex;
+                        flex-direction: column;
+                        h5 {
+                            font-size: FZ(24);
+                            color: $base-green;
+                            font-weight: 500;
+                            letter-spacing: 0.08em;
+                        }
+                        dl {
+                            position: relative;
+                            font-size: inherit;
+                            display: grid;
+                            grid-template-columns: auto 1fr;
+                            gap: 0.8em 1em;
+                            margin-top: 2em;
+                            dt {
+                                font-size: FZ(16);
+                                display: flex;
+                            }
+                            dd {
+                                font-size: FZ(16);
+                                display: flex;
+                                flex-direction: column;
+                                letter-spacing: 0.04em;
+                                gap: 0.5em 0;
+                                span {
+                                    font-size: inherit;
+                                }
+                            }
+                        }
+                        .notice {
+                            font-size: FZ(16);
+                            letter-spacing: 0.08em;
+                            line-height: 1.8em;
+                            margin-top: 0.5em;
+                        }
+                        .itemMap {
+                            background-color: #b40000;
+                            align-self: flex-start;
+                            color: #fff;
+                            font-size: inherit;
+                            line-height: 0.9em;
+                            padding-block: 0.8em;
+                            min-width: 12em;
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 2em;
+                            padding-left: 0.3em;
+                            span {
+                                position: relative;
+                                font-size: FZ(12);
+                                letter-spacing: 0.08em;
+                                padding-left: 1em;
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    left: -0.5em;
+                                    top: 50%;
+                                    translate: 0 -50%;
+                                    width: 1em;
+                                    @include svg-icon-map("fff");
+                                }
+                            }
+                        }
+                    }
+                    .itemImage {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            aspect-ratio: 1.45;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

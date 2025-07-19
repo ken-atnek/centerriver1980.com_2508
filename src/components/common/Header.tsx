@@ -1,23 +1,29 @@
 /* =======================================
- * 熊本市中央公民館 HEADER
+ *センターリバー HEADER
  * URL: src/components/common/Header.tsx
  * Created: 2025-07-11
  * Last updated: 2025-07-11
  * ======================================= */
 'use client';
+import { navMenu } from '@/data/navMenuData';
 import styles from '@/styles/components/common/Header.module.scss';
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import ExternalLink from '@/components/common/ExternalLink';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-
 import Logo from '@/assets/images/logo.webp';
+import IconCart from '@/assets/images/icon/cart.webp';
+import IconInsta from '@/assets/images/icon/insta.webp';
+import IconX from '@/assets/images/icon/x.webp';
+import ExternalLink from '@/components/common/ExternalLink';
 const Header = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const linkRefs = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {
     if (isOpen) {
@@ -35,9 +41,7 @@ const Header = () => {
       if (
         isOpen &&
         navRef.current &&
-        !navRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
+        !navRef.current.contains(event.target as Node)
       ) {
         closeMenu();
       }
@@ -50,66 +54,48 @@ const Header = () => {
   return (
     <header className={styles.containerHeader}>
       <article>
-        <h1>
+        <div className={styles.boxTitle}>
           <Link href="/" className={styles.linkTop}>
             <Image
               src={Logo}
-              alt="熊本市中央公民館のロゴ"
+              alt="センターリバーのロゴ"
               width={250}
               height={36}
             />
           </Link>
-        </h1>
+        </div>
         <nav
-          ref={navRef}
-          className={`${styles.wrapMobileMenu} ${isOpen ? styles['is-open'] : ''} ${
+          className={`${isOpen ? styles['is-open'] : ''} ${
             !isOpen ? styles.closing : ''
           }`}
         >
-          <Link
-            href="#ContainerNews"
-            className={styles.itemLink}
-            onClick={closeMenu}
-          >
-            お知らせ
-          </Link>
-          <Link
-            href="#ContainerFacilityGuide"
-            className={styles.itemLink}
-            onClick={closeMenu}
-          >
-            施設のご案内
-          </Link>
-          <Link
-            href="#ContainerCourseGuide"
-            className={styles.itemLink}
-            onClick={closeMenu}
-          >
-            講座のご案内
-          </Link>
-          <Link
-            href="#ContainerFacilityDetails"
-            className={styles.itemLink}
-            onClick={closeMenu}
-          >
-            利用申込・利用料金
-          </Link>
-          <Link
-            href="#ContainerAccess"
-            className={styles.itemLink}
-            onClick={closeMenu}
-          >
-            アクセス
-          </Link>
-          <ExternalLink
-            href="https://zform.kumanichi.com/td0625g/form/Untitled32/formperma/4qWnLqGcH38dthvgOBJv34Mpt-viegFsAdIs-s-fnPg"
-            aria-label="熊本市中央公民館へのお問い合わせ"
-            className={styles.itemLink}
-            onClick={closeMenu}
-          >
-            お問い合わせ
-          </ExternalLink>
+          <div className={styles.linkContainer} ref={containerRef}>
+            {navMenu.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className={`${styles.itemLink} ${pathname === item.href ? styles['is-active'] : ''}`}
+                ref={(el) => {
+                  if (el) linkRefs.current[index] = el;
+                }}
+                onClick={closeMenu}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </nav>
+        <div className={styles.boxSns}>
+          <ExternalLink href="#" aria-label="オンラインショップカートを見る">
+            <Image src={IconCart} alt="カート" />
+          </ExternalLink>
+          <ExternalLink href="#" aria-label="センターリバーのエックス">
+            <Image src={IconX} alt="センターリバーのエックス" />
+          </ExternalLink>
+          <ExternalLink href="#" aria-label="センターリバーのインスタ">
+            <Image src={IconInsta} alt="センターリバーのインスタ" />
+          </ExternalLink>
+        </div>
       </article>
       <button
         type="button"
@@ -119,7 +105,6 @@ const Header = () => {
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-label="メニューを開閉"
-        ref={buttonRef}
       >
         <span></span>
         <span></span>

@@ -1,31 +1,44 @@
 @use "variable" as *;
 @use "svg" as *;
 .containerHeader {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     display: flex;
     padding-inline: 2em;
     justify-content: center;
     z-index: 5;
     transition: 0.5s ease-out;
     background-color: #fff;
-    @include sp {
-        padding-inline: 0;
+    padding-bottom: 1em;
+    padding-top: 2em;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: calc(100% - 1px);
+        width: 100vw;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath d='M 0 30 Q 37.5 30 75 15 Q 150 -15 225 15 Q 262.5 30 300 30 Q 337.5 30 375 15 Q 450 -15 525 15 Q 562.5 30 600 30 Q 637.5 30 675 15 Q 750 -15 825 15 Q 862.5 30 900 30 Q 937.5 30 975 15 Q 1050 -15 1125 15 Q 1162.5 30 1200 30 L 1200 30 L 0 30 Z' fill='%23ffffff'/%3E%3C/svg%3E")
+            no-repeat center bottom;
+        background-size: contain;
+        aspect-ratio: 4;
+
+        // background-repeat: repeat;
+
+        z-index: 1;
     }
     article {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 0 2em;
+        gap: 0.5em 1em;
         max-width: $articleMaxWidth;
+        flex-wrap: wrap;
         @include sp {
             padding: 3vw 0;
             justify-content: center;
         }
-        h1 {
+        .boxTitle {
             position: relative;
-            max-width: 25rem;
+            max-width: 16rem;
             width: 100%;
             @include sp {
                 width: 60vw;
@@ -43,11 +56,41 @@
             position: relative;
             font-size: inherit;
             display: flex;
-            justify-content: flex-end;
-            margin-left: auto;
-            align-self: stretch;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 0 2em;
+            justify-content: flex-end;
+            .linkContainer {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                font-size: inherit;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 6vw 0;
+                    justify-content: center;
+                }
+                .itemLink {
+                    position: relative;
+                    font-size: FZ(16);
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    letter-spacing: 0.07em;
+                    text-decoration: none;
+                    color: #000;
+                    padding-inline: 0.8em;
+                    cursor: pointer;
+                    transition: 0.3s ease-out;
+                    @include hover {
+                        color: $base-green;
+                    }
+                    &.is-active {
+                        color: $base-green;
+                        font-weight: 500;
+                    }
+                }
+            }
             @include sp {
                 position: fixed;
                 top: 0;
@@ -55,27 +98,33 @@
                 width: 100vw;
                 height: 100vh;
                 height: 100dvh;
-                display: flex;
                 flex-direction: column;
-                align-items: center;
                 padding: 10vw 0;
                 background-color: #fff;
                 translate: 100vw;
                 transition: 0.3s ease-out;
                 opacity: 0;
-                gap: 4vw 0;
+                gap: 6vw 0;
                 justify-content: center;
                 &.is-open {
                     translate: 0;
                     opacity: 1;
                 }
             }
-            .itemLink {
-                font-size: FZ(16);
-                padding-block: 1.6em;
-                font-weight: 500;
-                @include sp {
-                    padding-block: 3vw;
+        }
+        .boxSns {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 0 1em;
+            a {
+                font-size: inherit;
+                width: 2em;
+                aspect-ratio: 1;
+                img {
+                    width: 100%;
+                    aspect-ratio: 1;
                 }
             }
         }
