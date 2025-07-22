@@ -51,6 +51,12 @@ const Header = () => {
       document.removeEventListener('click', handleOutsideClick, true);
   }, [isOpen]);
 
+  // Helper function to determine if the item is the current page
+  const isCurrent = (href: string): boolean => {
+    if (pathname === '/') return false;
+    return pathname === href;
+  };
+
   return (
     <header className={styles.containerHeader}>
       <article>
@@ -74,7 +80,7 @@ const Header = () => {
               <Link
                 key={index}
                 href={item.href}
-                className={`${styles.itemLink} ${pathname === item.href ? styles['is-active'] : ''}`}
+                className={`${styles.itemLink} ${isCurrent(item.href) ? styles['is-active'] : ''}`}
                 ref={(el) => {
                   if (el) linkRefs.current[index] = el;
                 }}

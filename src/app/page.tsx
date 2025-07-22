@@ -8,13 +8,15 @@
 import type { Metadata } from 'next';
 import styles from '@/styles/PageTop.module.scss';
 import Image from 'next/image';
-import ExternalLink from '@/components/common/ExternalLink';
+import ImageShopList from '@/assets/images/company/shimizu.webp';
 import Header from '@/components/common/Header';
 import Logo from '@/assets/images/logo.webp';
 import BlockCommitment from '@/components/top/BlockCommitment';
 import BlockMenu from '@/components/top/BlockMenu';
 import BlockOnlineShop from '@/components/top/BlockOnlineShop';
 import BlockNews from '@/components/top/BlockNews';
+import Link from 'next/link';
+
 export const generateMetadata = (): Metadata => {
   return {
     title: 'ステーキ&ハンバーグ センターリバー',
@@ -36,6 +38,17 @@ export default function Home() {
         <BlockMenu />
         <BlockOnlineShop />
         <BlockNews />
+        <article className={styles.blockShopList}>
+          <div className={styles.boxText}>
+            <h3>店舗一覧</h3>
+            <Link href="/company/" className={styles.itemPageLink}>
+              <span>店舗一覧はこちら</span>
+            </Link>
+          </div>
+          <div className={styles.itemImage}>
+            <Image src={ImageShopList} alt="店舗一覧" />
+          </div>
+        </article>
       </section>
     </>
   );

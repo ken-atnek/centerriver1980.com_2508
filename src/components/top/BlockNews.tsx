@@ -25,7 +25,7 @@ const BlockNews = () => {
           </li>
         ))}
       </ul>
-      <Link href="#" className={styles.itemPageLink}>
+      <Link href="/news/" className={styles.itemPageLink}>
         <span>もっと見る</span>
       </Link>
     </article>
