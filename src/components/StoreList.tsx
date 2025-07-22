@@ -23,6 +23,13 @@ const StoreList = () => {
                 href={`#${store.id}`}
                 aria-label={store.name}
                 className={styles.itemName}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.getElementById(store.id);
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 {store.name}
               </a>
@@ -44,16 +51,20 @@ const StoreList = () => {
                     <dt>電話</dt>
                     <dd>{store.tel}</dd>
                     {store.hours && (
-                      <>
+                      <div>
                         <dt>営業時間</dt>
                         <dd>
                           <span>{store.hours}</span>
                           {store.hours02 && <span>{store.hours02}</span>}
                         </dd>
-                      </>
+                      </div>
                     )}
-                    <dt>定休日</dt>
-                    <dd>{store.holiday}</dd>
+                    {store.holiday && (
+                      <div>
+                        <dt>定休日</dt>
+                        <dd>{store.holiday}</dd>
+                      </div>
+                    )}
                   </dl>
                   {store.notice && (
                     <p className={styles.notice}>{store.notice}</p>
@@ -73,7 +84,7 @@ const StoreList = () => {
                     <Image
                       src={store.image}
                       alt={store.name}
-                      width={400} // 必要に応じて調整
+                      width={400}
                       height={300}
                     />
                   </div>

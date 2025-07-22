@@ -79,6 +79,7 @@
             margin-top: 8em;
             font-size: inherit;
             gap: 5em 0;
+            margin-bottom: 5em;
             li {
                 grid-column: span 2;
                 display: grid;
@@ -116,6 +117,12 @@
                             grid-template-columns: auto 1fr;
                             gap: 0.8em 1em;
                             margin-top: 2em;
+                            div {
+                                font-size: inherit;
+                                grid-column: span 2;
+                                display: grid;
+                                grid-template-columns: subgrid;
+                            }
                             dt {
                                 font-size: FZ(16);
                                 display: flex;
@@ -173,6 +180,80 @@
                             aspect-ratio: 1.45;
                         }
                     }
+                }
+            }
+        }
+        .boxProfile {
+            position: relative;
+            width: 100%;
+            margin-top: 3em;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: inherit;
+            dl {
+                position: relative;
+                font-size: inherit;
+                display: grid;
+                grid-column: span 2;
+                grid-template-columns: subgrid;
+                gap: 0 5em;
+                border-bottom: 1px solid;
+                padding-block: 1em;
+                dt {
+                    font-size: FZ(16);
+                    letter-spacing: 0.08em;
+                    line-height: 1.8em;
+                }
+                dd {
+                    font-size: FZ(16);
+                    letter-spacing: 0.08em;
+                    display: flex;
+                    flex-direction: column;
+                    line-height: 1.8em;
+                    address {
+                        font-size: inherit;
+                        display: flex;
+                        align-items: center;
+                        gap: 0 1em;
+                    }
+                    span {
+                        font-size: inherit;
+                        line-height: 1.8em;
+                    }
+                    ul {
+                        position: relative;
+                        font-size: inherit;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1em 0;
+                        li {
+                            font-size: inherit;
+                            display: flex;
+                            flex-direction: column;
+                            h4 {
+                                font-size: inherit;
+                                line-height: 1.8em;
+                            }
+                            p {
+                                font-size: inherit;
+                                line-height: 1.8em;
+                            }
+                        }
+                    }
+                    &.shopListNumber {
+                        display: grid;
+                        grid-template-columns: auto auto 1fr;
+                        div {
+                            gap: 0 1em;
+                            display: grid;
+                            grid-column: span 3;
+                            grid-template-columns: subgrid;
+                            font-size: inherit;
+                        }
+                    }
+                }
+                &:first-of-type {
+                    border-top: 1px solid;
                 }
             }
         }
