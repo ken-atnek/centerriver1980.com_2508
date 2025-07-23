@@ -70,5 +70,20 @@ footer {
             height: 100%;
             background-color: $base-black;
         }
+        i {
+            margin-right: 0.5em;
+            position: relative;
+            padding-right: 0.5em;
+            letter-spacing: 0.08em;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $base-black;
+            }
+        }
     }
 }

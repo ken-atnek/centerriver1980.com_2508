@@ -1,0 +1,317 @@
+/* =================================
+ * 	センターリバー 当店のこだわり＆オススメメニュー
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+/* =================================
+ * コンテンツ
+ * ------------------------------ */
+.containerContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../assets/images/background_s.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-inline: 9em;
+    padding-bottom: 3em;
+    &::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        // aspect-ratio: 2560/2002;
+        background-image: url(../assets/images/background_side_s.webp);
+        background-size: cover;
+        background-repeat: repeat-y;
+        background-position: center bottom;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        padding: 3em 0 3em;
+        z-index: 2;
+    }
+    .blockConcept {
+        padding-inline: 2em;
+        padding-top: unset;
+        ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 3em 0;
+            width: 100%;
+            max-width: 100rem;
+            counter-reset: number 0;
+            font-size: inherit;
+            li {
+                position: relative;
+                font-size: inherit;
+                background-color: #fff;
+                padding: 3em 1.6em 2em;
+                display: flex;
+                flex-direction: column;
+                gap: 2em 0;
+                &::before {
+                    content: "こだわりその" counter(number);
+                    counter-increment: number 1;
+                    position: absolute;
+                    background-color: $base-green;
+                    color: #fff;
+                    padding: 0.5em 1.4em;
+                    top: -0.5em;
+                    left: -0.8em;
+                    font-size: FZ(24);
+                    @include Serif;
+                    letter-spacing: 0.12em;
+                    rotate: -5deg;
+                }
+                h3 {
+                    color: $base-green;
+                    font-size: FZ(18);
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3em;
+                    em {
+                        font-size: 2.8em;
+                        color: $base-black;
+                        font-weight: 700;
+                        &::before {
+                            content: "”";
+                            display: inline-block;
+                            scale: -1 1;
+                            translate: 0 -0.1em;
+                            margin-right: 0.1em;
+                        }
+                        &::after {
+                            content: "”";
+                        }
+                    }
+                }
+                p {
+                    font-size: FZ(16);
+                    letter-spacing: 0.08em;
+                    line-height: 1.8em;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    .blockMenu {
+        h3 {
+            font-size: FZ(18);
+            color: #fff;
+            width: 100%;
+            display: grid;
+            place-content: center;
+            height: 7rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            background-color: $base-green;
+        }
+        h4 {
+            font-size: FZ(45);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+        }
+        .sidebarH4 {
+            font-size: FZ(18);
+            text-transform: uppercase;
+            margin-top: 0.5em;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: #cc0000;
+            padding-left: 1em;
+        }
+        .menuList {
+            font-size: inherit;
+            margin-top: 3em;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5em 0;
+            .menuDetail {
+                font-size: inherit;
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                gap: 0 3em;
+                .itemImage {
+                    width: 100%;
+                    max-width: 51rem;
+                    img {
+                        width: 100%;
+                        align-items: 50/35;
+                        object-fit: cover;
+                    }
+                }
+                .wrapText {
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em 0;
+                    h5 {
+                        color: #664223;
+                        font-size: FZ(30);
+                        font-weight: 600;
+                        letter-spacing: 0.08em;
+                    }
+                    p {
+                        font-size: FZ(18);
+                        color: #cc0000;
+                        font-weight: 500;
+                        line-height: 1.6em;
+                        letter-spacing: 0.08em;
+                    }
+                    .wrpPrice {
+                        font-size: FZ(16);
+                        display: flex;
+                        gap: 0 1em;
+                        letter-spacing: 0.08em;
+                    }
+                }
+            }
+        }
+        .priceList {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            gap: 0.8em 0;
+            margin-top: 1em;
+            li {
+                display: flex;
+                position: relative;
+                font-size: FZ(18);
+                padding-top: 2em;
+                padding-left: 2em;
+                gap: 0 0.5em;
+                letter-spacing: 0.04em;
+                .weight {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #fff;
+                    border: 1px solid $base-green;
+                    font-size: 1.1em;
+                    @include Serif;
+                    color: $base-green;
+                    width: 4em;
+                    font-weight: 700;
+                    height: 1.6em;
+                    display: grid;
+                    place-content: center;
+                    rotate: -5deg;
+                }
+                .price {
+                    font-size: inherit;
+                    display: flex;
+                    gap: 0 0.5em;
+                    margin-left: 1em;
+                }
+            }
+        }
+        .imageList {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr auto auto;
+            font-size: inherit;
+            margin-top: 3em;
+            gap: 2em 2em;
+            li {
+                font-size: inherit;
+                grid-row: span 3;
+                grid-template-rows: subgrid;
+                display: grid;
+                gap: 0.2em 0;
+                justify-items: center;
+                .itemImage {
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1.42;
+                        object-fit: cover;
+                    }
+                }
+                h5 {
+                    font-size: FZ(18);
+                    font-weight: 500;
+                    color: #664223;
+                    letter-spacing: 0.08em;
+                    display: grid;
+                    place-content: center;
+                    text-align: center;
+                    span {
+                        font-size: 0.9em;
+                        font-weight: 400;
+                        padding-block: 0.3em;
+                    }
+                }
+                .price {
+                    font-size: FZ(16);
+                    display: flex;
+                    gap: 0 0.8em;
+                    letter-spacing: 0.04em;
+                }
+            }
+        }
+        // ハンバーグ
+        .boxHamburger {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-block: 3em;
+        }
+        // ステーキ&グリル
+        .boxSteak {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-block: 3em;
+        }
+        // ステーキ&グリル
+        .boxCombi {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-block: 3em;
+        }
+        .announce {
+            color: $base-green;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.6em;
+            letter-spacing: 0.08em;
+            font-size: FZ(18);
+        }
+        .linkPdf {
+            margin-top: 3em;
+            font-size: FZ(18);
+            color: #fff;
+            width: 100%;
+            display: grid;
+            place-content: center;
+            height: 7rem;
+            letter-spacing: 0.12em;
+            background-color: rgba(102, 66, 35, 0.99);
+        }
+    }
+}

@@ -11,9 +11,9 @@ const Footer = () => {
   return (
     <footer className={styles.containerFooter}>
       <nav>
-        <Link href="#">ご利用規約</Link>
-        <Link href="#">特定商取引法に基づく表示</Link>
-        <Link href="#">プライバシーポリシー</Link>
+        <Link href="/kiyaku/">ご利用規約</Link>
+        <Link href="/tokutei/">特定商取引法に基づく表示</Link>
+        <Link href="/policy/">プライバシーポリシー</Link>
       </nav>
       <div className={styles.copyright}>
         Copyright Center River. All Rights Reserved.

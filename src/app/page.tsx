@@ -11,7 +11,7 @@ import Image from 'next/image';
 import ImageShopList from '@/assets/images/company/shimizu.webp';
 import Header from '@/components/common/Header';
 import Logo from '@/assets/images/logo.webp';
-import BlockCommitment from '@/components/top/BlockCommitment';
+import BlockCommitment from '@/components/BlockCommitment';
 import BlockMenu from '@/components/top/BlockMenu';
 import BlockOnlineShop from '@/components/top/BlockOnlineShop';
 import BlockNews from '@/components/top/BlockNews';
@@ -34,7 +34,14 @@ export default function Home() {
       </section>
       <Header />
       <section className={styles.containerContents}>
-        <BlockCommitment />
+        <article className={styles.blockCommitment}>
+          <h3>センターリバーのこだわり</h3>
+          <p className={styles.sidebarH3}>COMMITMENT</p>
+          <BlockCommitment />
+          <Link href="#" className={styles.itemPageLink}>
+            <span>詳しくはこちら</span>
+          </Link>
+        </article>
         <BlockMenu />
         <BlockOnlineShop />
         <BlockNews />

@@ -4,10 +4,19 @@
  * Created: 2025-07-22
  * Last updated: 2025-07-22
  * ======================================= */
+import type { Metadata } from 'next';
 import { newsData } from '@/data/newsData';
 import Link from 'next/link';
 import PageHead from '@/components/common/PageHead';
 import styles from '@/styles/PageNews.module.scss';
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: 'お知らせ｜センターリバー',
+    description:
+      'センターリバーからのお知らせ・最新情報を掲載しています。キャンペーンや新店舗情報、営業時間変更などの最新ニュースをご確認いただけます。',
+  };
+};
 
 export default function NewsListPage() {
   // 新しい順にソート

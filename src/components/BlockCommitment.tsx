@@ -4,7 +4,7 @@
  * Created: 2025-07-19
  * Last updated: 2025-07-19
  * ======================================= */
-import styles from '@/styles/PageTop.module.scss';
+import styles from '@/styles/components/BlockCommitment.module.scss';
 import since1980 from '@/assets/images/since1980.webp';
 import Image from 'next/image';
 import { useMemo } from 'react';
@@ -66,9 +66,7 @@ const BlockCommitment = () => {
   );
 
   return (
-    <article className={styles.blockCommitment}>
-      <h3>センターリバーのこだわり</h3>
-      <p className={styles.sidebarH3}>COMMITMENT</p>
+    <>
       <p className={styles.announce}>
         私達はお客様を大切に、お客様の気持ちになり、
         <br />
@@ -78,7 +76,7 @@ const BlockCommitment = () => {
       <div className={styles.boxTitle}>
         <Image src={since1980} alt="since1980" />
       </div>
-      <ul>
+      <ul className={styles.contentsList}>
         {ListData.map((item, index) => (
           <li key={index}>
             <h4>{item.title}</h4>
@@ -86,10 +84,7 @@ const BlockCommitment = () => {
           </li>
         ))}
       </ul>
-      <Link href="#" className={styles.itemPageLink}>
-        <span>詳しくはこちら</span>
-      </Link>
-    </article>
+    </>
   );
 };
 export default BlockCommitment;
