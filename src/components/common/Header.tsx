@@ -95,10 +95,16 @@ const Header = () => {
           <ExternalLink href="#" aria-label="オンラインショップカートを見る">
             <Image src={IconCart} alt="カート" />
           </ExternalLink>
-          <ExternalLink href="#" aria-label="センターリバーのエックス">
+          <ExternalLink
+            href="https://x.com/centerriver01"
+            aria-label="センターリバーのエックス"
+          >
             <Image src={IconX} alt="センターリバーのエックス" />
           </ExternalLink>
-          <ExternalLink href="#" aria-label="センターリバーのインスタ">
+          <ExternalLink
+            href="https://www.instagram.com/center.river01/"
+            aria-label="センターリバーのインスタ"
+          >
             <Image src={IconInsta} alt="センターリバーのインスタ" />
           </ExternalLink>
         </div>

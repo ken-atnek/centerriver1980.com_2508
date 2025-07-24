@@ -35,7 +35,7 @@ export default function PageConcept() {
           <BlockCommitment />
         </article>
         <BlockConcept />
-        <article className={styles.blockMenu}>
+        <article className={styles.blockMenu} id="BlockMenu">
           <h3>オススメメニュー</h3>
           <BoxHamburger />
           <BoxSteak />

@@ -38,7 +38,7 @@ export default function Home() {
           <h3>センターリバーのこだわり</h3>
           <p className={styles.sidebarH3}>COMMITMENT</p>
           <BlockCommitment />
-          <Link href="#" className={styles.itemPageLink}>
+          <Link href="/concept/" className={styles.itemPageLink}>
             <span>詳しくはこちら</span>
           </Link>
         </article>

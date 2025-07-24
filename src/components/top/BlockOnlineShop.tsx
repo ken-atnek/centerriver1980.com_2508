@@ -58,7 +58,7 @@ const BlockOnlineShop = () => {
           </li>
         ))}
       </ul>
-      <Link href="#" className={styles.itemPageLink}>
+      <Link href="/products/" className={styles.itemPageLink}>
         <span>商品一覧</span>
       </Link>
     </article>

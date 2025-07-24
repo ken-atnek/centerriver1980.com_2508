@@ -48,7 +48,7 @@ const BlockMenu = () => {
           </li>
         ))}
       </ul>
-      <Link href="#" className={styles.itemPageLink}>
+      <Link href="/concept/#BlockMenu" className={styles.itemPageLink}>
         <span>メニュー一覧</span>
       </Link>
     </article>
