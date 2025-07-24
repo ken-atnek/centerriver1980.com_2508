@@ -1,0 +1,158 @@
+/* =================================
+ * 	センターリバー お知らせ
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+.itemPageLink {
+    position: relative;
+    display: grid;
+    place-content: center;
+    font-size: inherit;
+    background-color: #fff;
+    padding: 2px;
+    border: 2px solid $base-green;
+    border-radius: 4px;
+    align-self: center;
+    span {
+        position: relative;
+        font-size: FZ(16);
+        font-weight: 700;
+        color: #fff;
+        width: 30rem;
+        height: 4rem;
+        display: grid;
+        place-content: center;
+        letter-spacing: 0.12em;
+        z-index: 2;
+        transition: 0.3s ease-out;
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: $base-green;
+            transition: 0.3s ease-out;
+            clip-path: inset(0);
+            z-index: -1;
+        }
+    }
+    @include hover {
+        span {
+            color: $base-green;
+            &::before {
+                clip-path: inset(50% 50%);
+            }
+        }
+    }
+}
+
+/* =================================
+ * コンテンツ
+ * ------------------------------ */
+.containerContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../assets/images/background_s.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-inline: 9em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    &::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+
+        // aspect-ratio: 2560/2002;
+        background-image: url("../assets/images/background_side_s.webp");
+        background-size: cover;
+        background-repeat: repeat-y;
+        background-position: center bottom;
+    }
+    .sidebarH3 {
+        font-size: FZ(18);
+        text-transform: uppercase;
+        margin-top: 0.5em;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        max-width: $articleMaxWidth;
+        padding: 3em 0;
+        z-index: 2;
+    }
+
+    // ニュース一覧
+    .blockNewsList {
+        padding-top: 3em;
+        background-color: #fff;
+        padding-inline: 2em;
+        gap: 1em 0;
+        ul {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: inherit;
+            width: 100%;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            li {
+                position: relative;
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                font-size: inherit;
+                border-bottom: 1px solid;
+                padding-block: 1.4em;
+                align-items: center;
+                gap: 0 8em;
+                p {
+                    font-size: FZ(16);
+                    letter-spacing: 0.12em;
+                }
+                a {
+                    font-size: FZ(16);
+                    font-weight: 500;
+                    letter-spacing: 0.08em;
+                }
+                &:first-of-type {
+                    border-top: 1px solid;
+                }
+            }
+        }
+    }
+
+    // ニュース詳細
+    .blockNewsDetail {
+        padding-top: 3em;
+        background-color: #fff;
+        padding-inline: 2em;
+        gap: 1em 0;
+        h3 {
+            font-size: FZ(45);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+        .date {
+            color: $base-green;
+            font-size: FZ(18);
+        }
+        .boxDetail {
+            font-size: FZ(16);
+            margin-top: 3em;
+            letter-spacing: 0.08em;
+            line-height: 1.6em;
+            text-align: justify;
+            margin-bottom: 5em;
+        }
+    }
+}

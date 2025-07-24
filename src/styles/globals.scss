@@ -45,3 +45,45 @@ footer {
     font-size: inherit;
     z-index: 1;
 }
+.item-breadcrumb {
+    align-self: flex-end;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5em;
+    a {
+        font-size: FZ(15);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    span {
+        font-weight: 500;
+        font-size: FZ(14);
+        position: relative;
+        padding-left: 0.5em;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background-color: $base-black;
+        }
+        i {
+            margin-right: 0.5em;
+            position: relative;
+            padding-right: 0.5em;
+            letter-spacing: 0.08em;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $base-black;
+            }
+        }
+    }
+}

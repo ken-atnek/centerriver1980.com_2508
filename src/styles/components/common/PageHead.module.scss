@@ -1,0 +1,40 @@
+/* =================================
+ * 	PageHead
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.containerPageHead {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8em 0.8em 7em;
+    gap: 5em 0;
+    background: url("../../../assets/images/background_header.webp") no-repeat
+        center center/cover;
+    z-index: 2;
+    h1 {
+        background-color: #fff;
+        width: 100%;
+        font-size: inherit;
+        display: grid;
+        place-content: center;
+        border-radius: 1rem;
+        padding-block: 1em;
+        img {
+            width: 30rem;
+        }
+    }
+    h2 {
+        font-size: FZ(45);
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 3px 3px 5px #000;
+        text-align: center;
+        letter-spacing: 0.12em;
+    }
+}

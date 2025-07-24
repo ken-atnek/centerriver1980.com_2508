@@ -1,27 +1,40 @@
 /* =======================================
- * 熊本市中央公民館 お知らせDATA
+ *センターリバー ニュース記事DATA
  * URL:src/data/newsData.ts
- * Created: 2025-07-17
- * Last updated: 2025-07-17
+ * Created: 2025-07-22
+ * Last updated: 2025-07-22
  * ======================================= */
+import { ReactNode } from 'react';
+import { body001 } from './newsBody/newsBody001';
+import { body002 } from './newsBody/newsBody002';
+import { body003 } from './newsBody/newsBody003';
 
-import { NewsItem } from '@/types/newsItem';
+export type NewsItem = {
+  id: string;
+  date: string;
+  title: string;
+  body: {
+    content: ReactNode;
+  };
+};
 
 export const newsData: NewsItem[] = [
   {
-    pdfTitle: '「公民館だより」を7月号に更新しました。',
-    pdfLink: '/data/pdf/R7.7月号公民館だより.pdf',
-    date: '2025-07-01',
+    id: 'news003',
+    date: '2023-12-19',
+    title: '年末年始のご予約について',
+    body: body003,
   },
   {
-    pdfTitle: '「公民館だより」を6月号に更新しました。',
-    pdfLink: '/data/pdf/R7.6月号公民館だより.pdf',
-    date: '2025-06-01',
+    id: 'news002',
+    date: '2023-09-28',
+    title: 'レストランでのお弁当販売中止について',
+    body: body002,
   },
   {
-    body: '5月7日は定時休館になります。お間違えないようにお願いします。',
-    pdfTitle: '「公民館だより」を5月号に更新しました。',
-    pdfLink: '/data/pdf/R7.5月号公民館だより.pdf',
-    date: '2025-05-01',
+    id: 'news001',
+    date: '2022-10-06',
+    title: 'ホームページ、リニューアルのお知らせ',
+    body: body001,
   },
 ];
