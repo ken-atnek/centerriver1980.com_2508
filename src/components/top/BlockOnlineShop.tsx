@@ -48,7 +48,7 @@ const BlockOnlineShop = () => {
             <div className={styles.itemImage}>
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={typeof item.title === 'string' ? item.title : '商品画像'}
                 width={244}
                 height={244}
               />

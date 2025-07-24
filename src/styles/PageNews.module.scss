@@ -6,7 +6,6 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable keyframes-name-pattern */
 /* stylelint-disable custom-property-pattern */
-
 .itemPageLink {
     position: relative;
     display: grid;
@@ -56,7 +55,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url(../assets/images/background_s.webp);
+    background: url("../assets/images/background_s.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -70,13 +69,13 @@
         bottom: 0;
         width: 100%;
         height: 100%;
+
         // aspect-ratio: 2560/2002;
-        background-image: url(../assets/images/background_side_s.webp);
+        background-image: url("../assets/images/background_side_s.webp");
         background-size: cover;
         background-repeat: repeat-y;
         background-position: center bottom;
     }
-
     .sidebarH3 {
         font-size: FZ(18);
         text-transform: uppercase;
@@ -84,12 +83,11 @@
         font-weight: 500;
         letter-spacing: 0.12em;
     }
-
     article {
         display: flex;
         flex-direction: column;
         max-width: $articleMaxWidth;
-        padding: 3em 0 3em;
+        padding: 3em 0;
         z-index: 2;
     }
 
@@ -132,6 +130,7 @@
             }
         }
     }
+
     // ニュース詳細
     .blockNewsDetail {
         padding-top: 3em;

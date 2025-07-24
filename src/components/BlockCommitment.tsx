@@ -8,7 +8,6 @@ import styles from '@/styles/components/BlockCommitment.module.scss';
 import since1980 from '@/assets/images/since1980.webp';
 import Image from 'next/image';
 import { useMemo } from 'react';
-import Link from 'next/link';
 
 const BlockCommitment = () => {
   const ListData = useMemo(

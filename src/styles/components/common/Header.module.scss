@@ -1,5 +1,9 @@
 @use "variable" as *;
 @use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
 .containerHeader {
     position: relative;
     display: flex;
@@ -22,7 +26,6 @@
         aspect-ratio: 4;
 
         // background-repeat: repeat;
-
         z-index: 1;
     }
     article {

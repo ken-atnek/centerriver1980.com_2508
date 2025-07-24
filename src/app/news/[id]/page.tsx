@@ -9,17 +9,19 @@ import { notFound } from 'next/navigation';
 import PageHead from '@/components/common/PageHead';
 import styles from '@/styles/PageNews.module.scss';
 import Link from 'next/link';
-type Props = {
-  params: { id: string };
-};
 
 // 静的パス生成（全記事をビルド時に生成）
 export function generateStaticParams() {
   return newsData.map((item) => ({ id: item.id }));
 }
 
-export default function NewsDetailPage({ params }: Props) {
-  const news = newsData.find((item) => item.id === params.id);
+export default async function NewsDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const news = newsData.find((item) => item.id === id);
 
   if (!news) return notFound();
 

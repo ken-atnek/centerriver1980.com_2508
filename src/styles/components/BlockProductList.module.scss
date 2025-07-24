@@ -1,0 +1,92 @@
+/* =================================
+ * 	センターリバー お支払いについて他
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.blockProductList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: $articleMaxWidth;
+    margin-top: 5em;
+    margin-bottom: 8em;
+    gap: 5em 0;
+    h3 {
+        font-size: FZ(45);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+    }
+    .productList {
+        position: relative;
+        font-size: inherit;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0 2.4em;
+        li {
+            position: relative;
+            font-size: inherit;
+            grid-row: span 4;
+            display: grid;
+            grid-template-rows: subgrid;
+            gap: 0.5em 0;
+            &:nth-of-type(n + 5) {
+                margin-top: 6em;
+            }
+            .wrapName {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                h4 {
+                    text-align: center;
+                    font-size: FZ(16);
+                    font-weight: 500;
+                    letter-spacing: 0.04em;
+                }
+                span {
+                    font-size: FZ(14);
+                }
+            }
+            .wrapPrice {
+                font-size: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0 0.2em;
+                p {
+                    font-size: FZ(16);
+                }
+                span {
+                    font-size: FZ(14);
+                    &::before {
+                        content: "（";
+                    }
+                    &::after {
+                        content: ")";
+                    }
+                }
+            }
+            .button {
+                background-color: $base-green;
+                display: grid;
+                place-content: center;
+                color: #fff;
+                font-size: FZ(16);
+                height: 3em;
+                letter-spacing: 0.08em;
+                border-radius: 0.5rem;
+                transition: 0.3s ease-out;
+                @include hover {
+                    background-color: rgba($base-green, 0.2);
+                    color: $base-green;
+                }
+            }
+        }
+    }
+}

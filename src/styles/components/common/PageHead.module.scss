@@ -14,7 +14,7 @@
     align-items: center;
     padding: 0.8em 0.8em 7em;
     gap: 5em 0;
-    background: url(../../../assets/images/background_header.webp) no-repeat
+    background: url("../../../assets/images/background_header.webp") no-repeat
         center center/cover;
     z-index: 2;
     h1 {
@@ -33,7 +33,7 @@
         font-size: FZ(45);
         font-weight: 700;
         color: #fff;
-        text-shadow: 3px 3px 5px #000000;
+        text-shadow: 3px 3px 5px #000;
         text-align: center;
         letter-spacing: 0.12em;
     }
