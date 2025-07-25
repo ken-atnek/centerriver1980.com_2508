@@ -36,7 +36,7 @@ export default function PageTakeout() {
             </div>
             <p>
               「なんデリっ！」では、センターリバーのハンバーグやステーキを
-              <br />
+              <br className="pc" />
               お弁当でご提供しています。
             </p>
           </div>

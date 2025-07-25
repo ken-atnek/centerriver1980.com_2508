@@ -7,23 +7,28 @@
 /* stylelint-disable keyframes-name-pattern */
 /* stylelint-disable custom-property-pattern */
 // このファイル全体のルールを無効にする
-.itemH3 {
-    font-size: FZ(45);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-}
-.sidebarH3 {
-    font-size: FZ(18);
-    text-transform: uppercase;
-    margin-top: 0.5em;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-}
+// .itemH3 {
+//     font-size: FZ(45);
+//     font-weight: 600;
+//     letter-spacing: 0.04em;
+// }
+// .sidebarH3 {
+//     font-size: FZ(18);
+//     text-transform: uppercase;
+//     margin-top: 0.5em;
+//     font-weight: 500;
+//     letter-spacing: 0.12em;
+// }
 .containerContents {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 3em 2em 5em;
+    @include sp {
+        padding-inline: 4vw;
+        padding-bottom: 10vw;
+        padding-top: 4vw;
+    }
     article {
         gap: 5em 0;
         display: flex;
@@ -31,6 +36,9 @@
         align-items: center;
         max-width: $articleMaxWidth;
         font-size: inherit;
+        @include sp {
+            gap: 6vw 0;
+        }
     }
     .blockKiyaku {
         dl {

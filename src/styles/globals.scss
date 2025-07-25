@@ -45,12 +45,28 @@ footer {
     font-size: inherit;
     z-index: 1;
 }
+br {
+    &.pc {
+        @include sp {
+            display: none;
+        }
+    }
+    &.sp {
+        display: none;
+        @include sp {
+            display: inline;
+        }
+    }
+}
 .item-breadcrumb {
     align-self: flex-end;
     font-size: inherit;
     display: flex;
     align-items: center;
     gap: 0 0.5em;
+    @include sp {
+        align-self: center;
+    }
     a {
         font-size: FZ(15);
         text-transform: uppercase;

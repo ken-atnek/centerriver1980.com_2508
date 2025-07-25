@@ -11,6 +11,9 @@
     font-size: FZ(45);
     font-weight: 600;
     letter-spacing: 0.04em;
+    @include sp {
+        font-size: FZ(24);
+    }
 }
 .sidebarH3 {
     font-size: FZ(18);
@@ -18,12 +21,19 @@
     margin-top: 0.5em;
     font-weight: 500;
     letter-spacing: 0.12em;
+    @include sp {
+        font-size: FZ(16);
+        margin-top: 2vw;
+    }
 }
 .containerLocations {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 3em 2em 5em;
+    @include sp {
+        padding: 4vw 4vw 6vw;
+    }
     article {
         display: flex;
         flex-direction: column;
@@ -43,6 +53,11 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 4em 0;
             margin-top: 5em;
+            @include sp {
+                margin-top: 4vw;
+                display: flex;
+                flex-direction: column;
+            }
             li {
                 position: relative;
                 font-size: inherit;
@@ -50,6 +65,11 @@
                 grid-column: span 3;
                 grid-template-columns: subgrid;
                 gap: 2em 1em;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4vw 0;
+                }
                 h4 {
                     grid-column: span 3;
                     color: $base-green;
@@ -78,12 +98,21 @@
             font-size: inherit;
             gap: 5em 0;
             margin-bottom: 5em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+            }
             li {
                 grid-column: span 2;
                 display: grid;
                 grid-template-columns: subgrid;
                 font-size: inherit;
                 gap: 3em 2em;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6vw 0;
+                }
                 h4 {
                     grid-column: span 2;
                     font-size: FZ(24);
@@ -98,10 +127,19 @@
                     display: grid;
                     grid-template-columns: subgrid;
                     font-size: inherit;
+                    @include sp {
+                        grid-template-columns: subgrid;
+                        grid-auto-flow: row;
+                        border-bottom: 1px solid;
+                        padding-bottom: 6vw;
+                    }
                     .wrapDetails {
                         font-size: inherit;
                         display: flex;
                         flex-direction: column;
+                        @include sp {
+                            display: contents;
+                        }
                         h5 {
                             font-size: FZ(24);
                             color: $base-green;
@@ -115,6 +153,10 @@
                             grid-template-columns: auto 1fr;
                             gap: 0.8em 1em;
                             margin-top: 2em;
+                            @include sp {
+                                margin-top: 2vw;
+                                gap: 2vw 0;
+                            }
                             div {
                                 font-size: inherit;
                                 grid-column: span 2;
@@ -154,6 +196,10 @@
                             justify-content: center;
                             margin-top: 2em;
                             padding-left: 0.3em;
+                            @include sp {
+                                order: 1;
+                                margin-top: 2vw;
+                            }
                             span {
                                 position: relative;
                                 font-size: FZ(12);
@@ -173,6 +219,9 @@
                     }
                     .itemImage {
                         width: 100%;
+                        @include sp {
+                            margin-top: 2vw;
+                        }
                         img {
                             width: 100%;
                             aspect-ratio: 1.45;
@@ -197,6 +246,10 @@
                 gap: 0 5em;
                 border-bottom: 1px solid;
                 padding-block: 1em;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                }
                 dt {
                     font-size: FZ(16);
                     letter-spacing: 0.08em;
@@ -235,18 +288,35 @@
                             p {
                                 font-size: inherit;
                                 line-height: 1.8em;
+                                text-align: justify;
                             }
                         }
                     }
                     &.shopListNumber {
                         display: grid;
                         grid-template-columns: auto auto 1fr;
+                        @include sp {
+                            gap: 2vw 0;
+                        }
                         div {
                             gap: 0 1em;
                             display: grid;
                             grid-column: span 3;
                             grid-template-columns: subgrid;
                             font-size: inherit;
+                            @include sp {
+                                align-items: center;
+                            }
+                            span {
+                                i {
+                                    margin-left: 0.3em;
+                                }
+                                @include sp {
+                                    display: flex;
+                                    flex-direction: column;
+                                    line-height: 1em;
+                                }
+                            }
                         }
                     }
                 }

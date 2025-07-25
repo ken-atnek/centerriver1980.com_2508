@@ -23,7 +23,7 @@ const BlockCommitment = () => {
         description: (
           <>
             私達は、安全な食材にこだわり、
-            <br />
+            <br className="pc" />
             安心な料理を追求します。
           </>
         ),
@@ -39,7 +39,7 @@ const BlockCommitment = () => {
         description: (
           <>
             私達は、自然の恵みに感謝し、
-            <br />
+            <br className="pc" />
             身体に良い料理を追求します。
           </>
         ),
@@ -55,7 +55,7 @@ const BlockCommitment = () => {
         description: (
           <>
             私達は、食材本来の味を引き出し、
-            <br />
+            <br className="pc" />
             本当の旨み・食感を追求します。
           </>
         ),
@@ -68,9 +68,10 @@ const BlockCommitment = () => {
     <>
       <p className={styles.announce}>
         私達はお客様を大切に、お客様の気持ちになり、
-        <br />
+        <br className="pc" />
         お客様が満足するサービスを提供できるよう、
-        <br /> 努めてまいります。
+        <br className="pc" />
+        努めてまいります。
       </p>
       <div className={styles.boxTitle}>
         <Image src={since1980} alt="since1980" />

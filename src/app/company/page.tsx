@@ -112,7 +112,9 @@ export default function PageCompany() {
               <dt>営業店舗</dt>
               <dd className={styles.shopListNumber}>
                 <div>
-                  <span>ハンバーグレストラン　センターリバー</span>
+                  <span>
+                    ハンバーグレストラン<i>センターリバー</i>
+                  </span>
                   <span>熊本県</span>
                   <span>5店舗</span>
                 </div>

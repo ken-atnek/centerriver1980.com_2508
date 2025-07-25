@@ -59,7 +59,11 @@ const Header = () => {
 
   return (
     <header className={styles.containerHeader}>
-      <article>
+      <article
+        className={`${isOpen ? styles['is-open'] : ''} ${
+          !isOpen ? styles.closing : ''
+        }`}
+      >
         <div className={styles.boxTitle}>
           <Link href="/" className={styles.linkTop}>
             <Image
@@ -70,11 +74,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <nav
-          className={`${isOpen ? styles['is-open'] : ''} ${
-            !isOpen ? styles.closing : ''
-          }`}
-        >
+        <nav>
           <div className={styles.linkContainer} ref={containerRef}>
             {navMenu.map((item, index) => (
               <Link

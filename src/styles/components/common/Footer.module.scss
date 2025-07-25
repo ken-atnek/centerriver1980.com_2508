@@ -9,11 +9,20 @@
     color: #fff;
     padding: 3em 2em 1em;
     gap: 3em 0;
+    @include sp {
+        padding: 4vw 2vw 2vw;
+        gap: 4vw 0;
+    }
     nav {
         position: relative;
         font-size: inherit;
         display: flex;
         align-items: center;
+        @include sp {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2vw;
+        }
         a {
             position: relative;
             padding-inline: 1em;
@@ -21,8 +30,14 @@
             letter-spacing: 0.08em;
             font-weight: 500;
             border-right: 1px solid;
+            @include sp {
+                border-right: unset;
+            }
             &:first-of-type {
                 border-left: 1px solid;
+                @include sp {
+                    border-left: unset;
+                }
             }
         }
     }
@@ -32,5 +47,8 @@
         justify-content: center;
         font-size: FZ(14);
         letter-spacing: 0.04em;
+        @include sp {
+            font-size: FZ(12);
+        }
     }
 }
