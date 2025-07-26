@@ -172,6 +172,9 @@
             font-size: FZ(16);
             letter-spacing: 0.08em;
             line-height: 1.6em;
+            a {
+                font-size: inherit;
+            }
         }
     }
 }

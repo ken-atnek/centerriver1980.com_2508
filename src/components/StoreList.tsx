@@ -69,6 +69,9 @@ const StoreList = () => {
                   {store.notice && (
                     <p className={styles.notice}>{store.notice}</p>
                   )}
+                  {store.noticeSecond && (
+                    <p className={styles.notice}>{store.noticeSecond}</p>
+                  )}
                   {store.mapUrl && (
                     <ExternalLink
                       href={store.mapUrl}

@@ -71,14 +71,6 @@ export default function RootLayout({
     <html lang="ja" className={`${notoSans.className}`}>
       <head>
         <meta
-          name="robots"
-          content={isRealProduction ? 'index, follow' : 'noindex, nofollow'}
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-        />
-        <meta
           name="format-detection"
           content="telephone=no, address=no, email=no"
         />

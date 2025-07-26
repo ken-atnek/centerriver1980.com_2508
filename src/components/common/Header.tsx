@@ -57,8 +57,30 @@ const Header = () => {
     return pathname === href;
   };
 
+  // Fixed header state and ref
+  const [isFixed, setIsFixed] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  // Store the original Y-offset of the header
+  const headerOffsetRef = useRef(0);
+
+  useEffect(() => {
+    // Set the original offsetTop of the header on mount
+    headerOffsetRef.current = headerRef.current?.offsetTop ?? 0;
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setIsFixed(y >= headerOffsetRef.current);
+    };
+    window.addEventListener('scroll', handleScroll);
+    // Run once to set state if already scrolled
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className={styles.containerHeader}>
+    <header
+      className={`${styles.containerHeader} ${isFixed ? styles['is-fixed'] : ''}`}
+      ref={headerRef}
+    >
       <article
         className={`${isOpen ? styles['is-open'] : ''} ${
           !isOpen ? styles.closing : ''

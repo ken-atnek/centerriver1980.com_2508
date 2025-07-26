@@ -25,6 +25,7 @@ export type Store = {
   holiday?: string;
   mapUrl: string;
   notice?: string;
+  noticeSecond?: string;
   image?: StaticImageData;
 };
 
@@ -43,7 +44,7 @@ export const storeList: StoreGroup[] = [
         mapName: '浜線店',
         address: '熊本市中央区八王寺町34番16号',
         tel: '096-378-9191（センターリバー 浜線店）',
-        hours: '11:00～22:00（L.O.21:30）',
+        hours: '11:00～21:00（オーダーストップ）',
         holiday: '毎週水曜日',
         mapUrl: 'https://goo.gl/maps/ca84YXSPLdA1jMaL7',
         notice:
@@ -58,7 +59,7 @@ export const storeList: StoreGroup[] = [
         tel: '096-389-0515',
         hours: '11:00～21:00（オーダーストップ）',
         holiday: '毎週水曜日',
-        mapUrl: 'https://goo.gl/maps/6125zkrUNFVkRy3SA7',
+        mapUrl: 'https://goo.gl/maps/6125zkrUNFVkRy3SA',
         notice:
           '※急遽お休みをいただく場合がございます。事前にお電話でご確認ください',
         image: imgKumamoto02,
@@ -112,6 +113,8 @@ export const storeList: StoreGroup[] = [
         holiday: '日曜・祝日',
         mapUrl: 'https://goo.gl/maps/6sm5E5k8RyDtQarX9',
         notice:
+          '※ご来店前にお電話にてご注文いただければ、アツアツのお弁当をご用意できます。',
+        noticeSecond:
           '※急遽お休みをいただく場合がございます。事前にお電話でご確認ください',
         image: imgKumamoto06,
       },
@@ -159,7 +162,7 @@ export const storeList: StoreGroup[] = [
         tel: '099-812-7655',
         hours: '11:00～21:00（オーダーストップ）',
         holiday: '火曜日',
-        mapUrl: 'https://goo.gl/maps/Dj3iLNU14qW6pigY7',
+        mapUrl: 'https://goo.gl/maps/kzFmzsYRUKiZhwej8',
         image: imgKagoshima01,
       },
     ],
