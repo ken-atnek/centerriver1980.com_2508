@@ -38,7 +38,7 @@ export default function Product001Page() {
         </article>
         <BlockChefMovie />
         <article>
-          <div className={styles.wrapTextDetails}>
+          <div className={styles.wrapTextSubDetails}>
             <h4>{productData.section02.title}</h4>
             <div className={styles.itemText}>
               {productData.section02.text.split('\n').map((line, i) => (

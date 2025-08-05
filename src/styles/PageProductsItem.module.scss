@@ -56,7 +56,8 @@
 }
 .boxPurchase {
     font-size: inherit;
-    width: 50%;
+    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1em 0;
@@ -191,6 +192,30 @@
         flex-direction: column;
         gap: 2em 0;
         flex: 1;
+        width: 50%;
+        .itemH4 {
+            font-size: inherit;
+        }
+        h4 {
+            font-size: FZ(21);
+            font-weight: 500;
+            text-align: justify;
+            line-height: 1.6em;
+            letter-spacing: 0.08em;
+        }
+        .itemText {
+            font-size: inherit;
+            p {
+                font-size: FZ(16);
+                text-align: justify;
+                line-height: 1.8em;
+                letter-spacing: 0.12em;
+            }
+        }
+    }
+    .wrapTextSubDetails {
+        width: 50%;
+        font-size: inherit;
         .itemH4 {
             font-size: inherit;
         }

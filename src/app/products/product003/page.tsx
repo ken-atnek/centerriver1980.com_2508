@@ -1,11 +1,11 @@
 /* =======================================
- * プレミアム和牛赤黒ハンバーグ
- * URL: src/app/products/product002/page.tsx
+ * オリジナルコーンポタージュスープ
+ * URL:src/app/products/product003/page.tsx
  * Referenced in: src/app/products/page.tsx
  * Created: 2025-08-05
  * Last updated: 2025-08-05
  * ======================================= */
-import productData from '@/data/products/product002';
+import productData from '@/data/products/product003';
 import productExtra from '@/data/products/product999';
 import PageHead from '@/components/common/PageHead';
 import styles from '@/styles/PageProductsItem.module.scss';
@@ -18,7 +18,7 @@ import {
 } from '@/components/products/ProductCommon';
 import Image from 'next/image';
 
-export default function Product002Page() {
+export default function Product003Page() {
   return (
     <>
       <PageHead title={productData.name} />
@@ -61,14 +61,7 @@ export default function Product002Page() {
             price={productData.price}
           />
         </article>
-        <div className={styles.blockImage}>
-          <Image
-            src="/images/products/sr.008_(2).webp"
-            alt="ハンバーグ"
-            width={903}
-            height={625}
-          />
-        </div>
+
         <hr className={styles.hr} />
         <article>
           <ProductImage name={productExtra.name} image={productExtra.image} />
