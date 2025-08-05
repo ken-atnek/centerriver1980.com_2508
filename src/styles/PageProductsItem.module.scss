@@ -1,0 +1,231 @@
+/* =================================
+ * 	センターリバー オンラインショップ
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+/* =================================
+ * HEAD
+ * ------------------------------ */
+.headItemName {
+    width: 100%;
+    max-width: $articleMaxWidth;
+    font-size: FZ(30);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding-bottom: 0.3em;
+    border-bottom: solid 2px #eaeaea;
+}
+.itemBreadCrumb {
+    align-self: center;
+    position: relative;
+    width: 100%;
+    max-width: $articleMaxWidth;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: inherit;
+    margin-top: 2em;
+    a {
+        font-size: FZ(12);
+        display: flex;
+        letter-spacing: 0.08em;
+        &::after {
+            content: "|";
+            margin-inline: 0.5em;
+        }
+    }
+    p {
+        font-size: FZ(12);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+    }
+}
+.boxImage {
+    position: relative;
+    width: 50%;
+}
+.hr {
+    width: 100%;
+    max-width: $articleMaxWidth;
+    border-top: 2px solid #eaeaea;
+}
+.boxPurchase {
+    font-size: inherit;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em 0;
+    .wrapInfo {
+        position: relative;
+        font-size: inherit;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0 5em;
+        dl {
+            font-size: inherit;
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: subgrid;
+            border-bottom: 1px solid;
+            padding-block: 1em;
+            dt {
+                font-size: FZ(16);
+            }
+            dd {
+                font-size: FZ(16);
+                letter-spacing: 0.04em;
+            }
+        }
+    }
+    .wrapInput {
+        position: relative;
+        font-size: inherit;
+        display: flex;
+        justify-content: flex-end;
+
+        // inputタグ初期化
+        input {
+            margin: 0;
+            padding: 0;
+            background: none;
+            border: none;
+            border-radius: 0;
+            outline: none;
+            appearance: none;
+        }
+        input[type="number"] {
+            padding: 0.3em;
+            border-radius: 0.3rem;
+            letter-spacing: 0.04em;
+            border: solid 1px #a2b2b9;
+            font-size: 1.8rem;
+            background-color: #fff;
+            width: 4em;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 0.3em;
+            &::placeholder {
+                color: #8f8f8f;
+            }
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: FZ(16);
+        }
+    }
+    button {
+        align-self: flex-end;
+        font-size: inherit;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 1em;
+        height: 3em;
+        width: 14em;
+        border-radius: 0.2rem;
+        background-image: linear-gradient(
+            to top,
+            rgba(#325000, 1),
+            rgba(#325000, 0.6)
+        );
+        span {
+            position: relative;
+            font-size: FZ(18);
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                right: calc(100% + 1.6em);
+                width: 1.5em;
+                background: url("../assets/images/icon/cart.webp") no-repeat
+                    center center / contain;
+                aspect-ratio: 1;
+                filter: brightness(0) invert(100);
+            }
+        }
+    }
+}
+
+/* =================================
+ * コンテンツ
+ * ------------------------------ */
+.containerContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 2em;
+    gap: 3em 0;
+    @include sp {
+        padding: 4vw;
+    }
+    article {
+        display: flex;
+        max-width: $articleMaxWidth;
+        gap: 0 3em;
+    }
+    .blockImage {
+        position: relative;
+        width: 100%;
+        max-width: $articleMaxWidth;
+        border-top: solid 2px #eaeaea;
+        border-bottom: solid 2px #eaeaea;
+        padding-block: 0.5em;
+        font-size: inherit;
+        img {
+            width: 100%;
+        }
+    }
+    .wrapTextDetails {
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 2em 0;
+        flex: 1;
+        .itemH4 {
+            font-size: inherit;
+        }
+        h4 {
+            font-size: FZ(21);
+            font-weight: 500;
+            text-align: justify;
+            line-height: 1.6em;
+            letter-spacing: 0.08em;
+        }
+        .itemText {
+            font-size: inherit;
+            p {
+                font-size: FZ(16);
+                text-align: justify;
+                line-height: 1.8em;
+                letter-spacing: 0.12em;
+            }
+        }
+    }
+    .blockInner {
+        display: flex;
+        flex-direction: column;
+        font-size: inherit;
+        width: 100%;
+        flex: 1;
+        h4 {
+            font-size: FZ(21);
+            font-weight: 500;
+            text-align: justify;
+            line-height: 1.6em;
+            letter-spacing: 0.08em;
+        }
+        .boxPurchase {
+            width: 100%;
+        }
+    }
+}
