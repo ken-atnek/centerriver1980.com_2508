@@ -51,7 +51,7 @@ const productList: ProductItem[] = [
     subTitle: '(ガーリック・レホール・梅肉)',
     price: '389円',
     taxIncluded: '税込420円',
-    link: '#',
+    link: '/products/product004/',
   },
   {
     id: 'item05',
