@@ -16,11 +16,22 @@
     letter-spacing: 0.128em;
     line-height: 1.8em;
     margin-top: 2em;
+    @include sp {
+        font-size: FZ(18);
+        width: 80vw;
+        line-height: 1.6em;
+        margin-top: 4vw;
+    }
 }
 .boxTitle {
     max-width: 65rem;
     font-size: inherit;
     margin-top: 3em;
+    @include sp {
+        max-width: unset;
+        width: 80vw;
+        margin-top: 6vw;
+    }
 }
 .contentsList {
     position: relative;
@@ -31,6 +42,12 @@
     margin-top: 3em;
     width: 100%;
     margin-bottom: 3em;
+    @include sp {
+        grid-template-columns: auto 1fr;
+        width: 80vw;
+        gap: 4vw 0;
+        margin-top: 6vw;
+    }
     li {
         position: relative;
         font-size: inherit;
@@ -38,6 +55,12 @@
         flex-direction: column;
         align-items: center;
         gap: 2em 0;
+        @include sp {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: subgrid;
+            gap: 0 4vw;
+        }
         h4 {
             font-size: FZ(30);
             line-height: 1.4em;
@@ -52,12 +75,19 @@
             color: #fff;
             text-align: center;
             font-weight: 600;
+            @include sp {
+                font-size: FZ(18);
+                width: 5.4em;
+            }
         }
         p {
             font-size: FZ(16);
             text-align: center;
             line-height: 1.6em;
             letter-spacing: 0.08em;
+            @include sp {
+                text-align: justify;
+            }
         }
     }
 }

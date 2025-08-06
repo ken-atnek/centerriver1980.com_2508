@@ -26,7 +26,7 @@ const productList: ProductItem[] = [
     title: '焦げ目付き\nオリジナルハンバーグ',
     price: '370円',
     taxIncluded: '税込400円',
-    link: '#',
+    link: '/products/product001/',
   },
   {
     id: 'item02',
@@ -34,7 +34,7 @@ const productList: ProductItem[] = [
     title: 'プレミアム和牛赤黒ハンバーグ',
     price: '580円',
     taxIncluded: '税込626円',
-    link: '#',
+    link: '/products/product002/',
   },
   {
     id: 'item03',
@@ -42,7 +42,7 @@ const productList: ProductItem[] = [
     title: 'オリジナル\nコーンポタージュスープ',
     price: '435円',
     taxIncluded: '税込470円',
-    link: '#',
+    link: '/products/product003/',
   },
   {
     id: 'item04',
@@ -51,7 +51,7 @@ const productList: ProductItem[] = [
     subTitle: '(ガーリック・レホール・梅肉)',
     price: '389円',
     taxIncluded: '税込420円',
-    link: '#',
+    link: '/products/product004/',
   },
   {
     id: 'item05',

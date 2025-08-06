@@ -16,6 +16,9 @@
     border-bottom: 2px solid #eaeaea;
     padding: 1em 0;
     gap: 0.5em 0;
+    @include sp {
+        gap: 4vw 0;
+    }
     h3 {
         color: $base-green;
         text-align: center;
@@ -23,6 +26,9 @@
         font-weight: 500;
         letter-spacing: 0.04em;
         line-height: 1.6em;
+        @include sp {
+            font-size: FZ(20);
+        }
     }
     .itemMovie {
         width: 100%;

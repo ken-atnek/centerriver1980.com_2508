@@ -33,7 +33,7 @@ const BoxSteak = () => {
   );
   const imageList: ImageList[] = useMemo(
     () => [
-      { image: ImageSteak02, title: '牛ヒレステーキ', price: 1370 },
+      { image: ImageSteak02, title: '牛ヒレステーキ', price: 2530 },
       { image: ImageSteak03, title: '牛サーロインステーキ', price: 2530 },
       { image: ImageSteak04, title: '赤鶏香草焼き', price: 1630 },
     ],

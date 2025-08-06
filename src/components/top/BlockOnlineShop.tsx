@@ -41,7 +41,11 @@ const BlockOnlineShop = () => {
     <article className={styles.blockOnlineShop}>
       <h3>オンラインショップ</h3>
       <p className={styles.sidebarH3}>online shop</p>
-
+      <p className={styles.announce}>
+        手軽で豪華なお食事としてや、大切なあの人への贈り物として。
+        <br />
+        熊本をはじめ九州のハンバーグ専門店として愛されてきたセンターリバーのハンバーグを、ご自宅で気軽に味わえる形で販売しております。
+      </p>
       <ul>
         {ListData.map((item, index) => (
           <li key={index}>

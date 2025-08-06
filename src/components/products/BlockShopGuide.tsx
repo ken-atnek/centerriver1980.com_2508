@@ -13,7 +13,7 @@ import Payment04 from '@/assets/images/icon/amex.webp';
 import Payment05 from '@/assets/images/icon/daibiki.webp';
 import Image from 'next/image';
 import shippingData from '@/data/shippingData';
-
+import Link from 'next/link';
 const BlockShopGuide = () => {
   return (
     <article className={styles.blockShopGuide}>
@@ -82,7 +82,8 @@ const BlockShopGuide = () => {
           <br />
           返送料はこちらが負担いたします。
           <br />
-          ※詳しくは【特定商取引法に関する表示】に記載しておりますのでご確認お願い致します。
+          ※詳しくは<Link href="/tokutei/">【特定商取引法に関する表示】</Link>
+          に記載しておりますのでご確認お願い致します。
         </p>
       </div>
     </article>

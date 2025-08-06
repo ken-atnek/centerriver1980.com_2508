@@ -24,9 +24,21 @@
             no-repeat center bottom;
         background-size: contain;
         aspect-ratio: 4;
-
-        // background-repeat: repeat;
         z-index: 1;
+        @include sp {
+            display: none;
+        }
+    }
+    @include sp {
+        padding: 0;
+    }
+    &.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 10%); // Optional effect
     }
     article {
         display: flex;
@@ -36,14 +48,31 @@
         max-width: $articleMaxWidth;
         flex-wrap: wrap;
         @include sp {
-            padding: 3vw 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            flex-direction: column;
+            padding: 10vw 0;
+            background-color: #fff;
+            translate: 100vw;
+            transition: 0.3s ease-out;
+            opacity: 0;
+            gap: 14vw 0;
             justify-content: center;
+            &.is-open {
+                translate: 0;
+                opacity: 1;
+            }
         }
         .boxTitle {
             position: relative;
             max-width: 16rem;
             width: 100%;
             @include sp {
+                max-width: unset;
                 width: 60vw;
                 padding-right: 2vw;
                 z-index: 201;
@@ -94,26 +123,6 @@
                     }
                 }
             }
-            @include sp {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                height: 100dvh;
-                flex-direction: column;
-                padding: 10vw 0;
-                background-color: #fff;
-                translate: 100vw;
-                transition: 0.3s ease-out;
-                opacity: 0;
-                gap: 6vw 0;
-                justify-content: center;
-                &.is-open {
-                    translate: 0;
-                    opacity: 1;
-                }
-            }
         }
         .boxSns {
             position: relative;
@@ -121,10 +130,17 @@
             display: grid;
             grid-template-columns: repeat(3, auto);
             gap: 0 1em;
+            @include sp {
+                margin-top: 6vw;
+                gap: 0 6vw;
+            }
             a {
                 font-size: inherit;
                 width: 2em;
                 aspect-ratio: 1;
+                @include sp {
+                    width: 8vw;
+                }
                 img {
                     width: 100%;
                     aspect-ratio: 1;
@@ -135,18 +151,18 @@
 }
 .hamburgerButton {
     position: fixed;
-    top: 1vw;
-    right: 2vw;
+    top: 6vw;
+    right: 0;
     width: 11vw;
     aspect-ratio: 1;
-
-    // border: solid 2px #fff;
+    border-top: solid 1px #fff;
+    border-left: solid 1px #fff;
+    border-bottom: solid 1px #fff;
     z-index: 100;
     display: none;
-    background-color: $base-white;
-    border-radius: 2vw;
-
-    // border: 1px solid #000;
+    background-color: #db8713;
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
     @include sp {
         display: block;
     }
@@ -154,18 +170,18 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 60%;
-        height: 3px;
-        background-color: #505050;
+        width: 55%;
+        height: 2px;
+        background-color: #fff;
         transition: 0.3s ease-out;
         &:nth-of-type(1) {
-            translate: -50% calc(-50% - 8px);
+            translate: -50% calc(-50% - 6px);
         }
         &:nth-of-type(2) {
             translate: -50% -50%;
         }
         &:nth-of-type(3) {
-            translate: -50% calc(-50% + 8px);
+            translate: -50% calc(-50% + 6px);
         }
     }
     &.is-open {

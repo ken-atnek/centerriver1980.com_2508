@@ -17,6 +17,10 @@
     background: url("../../../assets/images/background_header.webp") no-repeat
         center center/cover;
     z-index: 2;
+    @include sp {
+        padding: 3vw 3vw 8vw;
+        gap: 6vw;
+    }
     h1 {
         background-color: #fff;
         width: 100%;
@@ -27,6 +31,9 @@
         padding-block: 1em;
         img {
             width: 30rem;
+            @include sp {
+                width: 40vw;
+            }
         }
     }
     h2 {
@@ -36,5 +43,8 @@
         text-shadow: 3px 3px 5px #000;
         text-align: center;
         letter-spacing: 0.12em;
+        @include sp {
+            font-size: FZ(24);
+        }
     }
 }
