@@ -59,7 +59,7 @@ const productList: ProductItem[] = [
     title: 'オリジナルスパイス',
     price: '649円',
     taxIncluded: '税込700円',
-    link: '#',
+    link: '/products/product005/',
   },
   {
     id: 'item06',
@@ -67,7 +67,7 @@ const productList: ProductItem[] = [
     title: 'オリジナルドレッシング',
     price: '630円',
     taxIncluded: '税込680円',
-    link: '#',
+    link: '/products/product006/',
     hasTilde: true,
   },
   {

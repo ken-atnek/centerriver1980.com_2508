@@ -1,11 +1,11 @@
 /* =======================================
- * オリジナルコーンポタージュスープ
- * URL:src/app/products/product003/page.tsx
+ * レフォールスパイス
+ * URL:src/app/products/product005/page.tsx
  * Referenced in: src/app/products/page.tsx
- * Created: 2025-08-05
- * Last updated: 2025-08-05
+ * Created: 2025-08-09
+ * Last updated: 2025-08-09
  * ======================================= */
-import productData from '@/data/products/product003';
+import productData from '@/data/products/product007';
 import productExtra from '@/data/products/product999';
 import PageHead from '@/components/common/PageHead';
 import styles from '@/styles/PageProductsItem.module.scss';
@@ -47,7 +47,6 @@ export default function Product003Page() {
         </article>
         <article>
           <div className={styles.wrapTextSubDetails}>
-            <h4>{productData.section02.title}</h4>
             <div className={styles.itemText}>
               {productData.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>

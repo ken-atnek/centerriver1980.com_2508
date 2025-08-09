@@ -18,7 +18,6 @@ import {
   ProductImage,
   ProductPurchase,
 } from '@/components/products/ProductCommon';
-import Image from 'next/image';
 
 export default function Product003Page() {
   return (
