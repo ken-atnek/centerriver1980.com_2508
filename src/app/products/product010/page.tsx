@@ -1,15 +1,18 @@
 /* =======================================
- * オリジナルドレッシング
- * URL:src/app/products/product006/page.tsx
+ * 焦げ目付きオリジナルハンバーグセット
+ * URL:src/app/products/product010/page.tsx
  * Referenced in: src/app/products/page.tsx
  * Created: 2025-08-09
  * Last updated: 2025-08-09
  * ======================================= */
-import productData from '@/data/products/product008';
-import productData02 from '@/data/products/product009';
-import productData03 from '@/data/products/product010';
-import productExtra from '@/data/products/product999';
+import productData from '@/data/products/product016';
+import productData02 from '@/data/products/product017';
+import productData03 from '@/data/products/product018';
+import productData04 from '@/data/products/product019';
+import productData05 from '@/data/products/product020';
 import PageHead from '@/components/common/PageHead';
+import BlockChefMovie from '@/components/products/BlockChefMovie';
+
 import styles from '@/styles/PageProductsItem.module.scss';
 import BlockShopGuide from '@/components/products/BlockShopGuide';
 import {
@@ -19,7 +22,7 @@ import {
   ProductPurchase,
 } from '@/components/products/ProductCommon';
 
-export default function Product006Page() {
+export default function Product10Page() {
   return (
     <>
       <PageHead title={productData.name} />
@@ -47,8 +50,11 @@ export default function Product006Page() {
             </div>
           </div>
         </article>
+        <BlockChefMovie />
+
         <article>
           <div className={styles.wrapTextSubDetails}>
+            <h4>{productData02.section02.title}</h4>
             <div className={styles.itemText}>
               {productData02.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>
@@ -63,6 +69,8 @@ export default function Product006Page() {
         </article>
         <article>
           <div className={styles.wrapTextSubDetails}>
+            <h4>{productData03.section02.title}</h4>
+
             <div className={styles.itemText}>
               {productData03.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>
@@ -75,18 +83,39 @@ export default function Product006Page() {
             price={productData03.price}
           />
         </article>
-        <hr className={styles.hr} />
         <article>
-          <ProductImage name={productExtra.name} image={productExtra.image} />
-          <div className={styles.blockInner}>
-            <h4>{productExtra.section01.title}</h4>
-            <ProductPurchase
-              name={productExtra.name}
-              code={productExtra.code}
-              price={productExtra.price}
-            />
+          <div className={styles.wrapTextSubDetails}>
+            <h4>{productData04.section02.title}</h4>
+
+            <div className={styles.itemText}>
+              {productData04.section02.text.split('\n').map((line, i) => (
+                <p key={`section02-${i}`}>{line}</p>
+              ))}
+            </div>
           </div>
+          <ProductPurchase
+            name={productData04.name}
+            code={productData04.code}
+            price={productData04.price}
+          />
         </article>
+        <article>
+          <div className={styles.wrapTextSubDetails}>
+            <h4>{productData05.section02.title}</h4>
+
+            <div className={styles.itemText}>
+              {productData05.section02.text.split('\n').map((line, i) => (
+                <p key={`section02-${i}`}>{line}</p>
+              ))}
+            </div>
+          </div>
+          <ProductPurchase
+            name={productData05.name}
+            code={productData05.code}
+            price={productData05.price}
+          />
+        </article>
+
         <BlockShopGuide />
       </section>
     </>

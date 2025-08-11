@@ -8,8 +8,17 @@
 import Image from 'next/image';
 import styles from '@/styles/PageProductsItem.module.scss';
 import Link from 'next/link';
-export const ProductTitle = ({ name }: { name: string }) => (
-  <h3 className={styles.headItemName}>{name}</h3>
+export const ProductTitle = ({
+  name,
+  subName,
+}: {
+  name: string;
+  subName?: string;
+}) => (
+  <h3 className={styles.headItemName}>
+    {name}
+    {subName && <span>{subName}</span>}
+  </h3>
 );
 export const ProductBreadCrumb = ({ name }: { name: string }) => (
   <div className={styles.itemBreadCrumb}>
@@ -35,10 +44,12 @@ export const ProductPurchase = ({
   name,
   code,
   price,
+  subName,
 }: {
   name: string;
   code: string;
   price: number;
+  subName?: string;
 }) => (
   <div className={styles.boxPurchase}>
     <div className={styles.wrapInfo}>
@@ -48,7 +59,10 @@ export const ProductPurchase = ({
       </dl>
       <dl>
         <dt>商品名</dt>
-        <dd>{name}</dd>
+        <dd>
+          {name}
+          {subName && <span>{subName}</span>}
+        </dd>
       </dl>
       <dl>
         <dt>価格（税込）</dt>

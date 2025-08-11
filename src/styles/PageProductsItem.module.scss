@@ -19,6 +19,12 @@
     letter-spacing: 0.08em;
     padding-bottom: 0.3em;
     border-bottom: solid 2px #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em 0;
+    span {
+        font-size: 0.8em;
+    }
 }
 .itemBreadCrumb {
     align-self: center;
@@ -80,6 +86,11 @@
             dd {
                 font-size: FZ(16);
                 letter-spacing: 0.04em;
+                display: flex;
+                flex-direction: column;
+                span {
+                    font-size: 0.8em;
+                }
             }
         }
     }

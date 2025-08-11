@@ -76,7 +76,7 @@ const productList: ProductItem[] = [
     title: 'ファミリーセット',
     price: '2,352円',
     taxIncluded: '税込2,540円',
-    link: '#',
+    link: '/products/product007/',
     hasTilde: true,
   },
   {
@@ -87,7 +87,7 @@ const productList: ProductItem[] = [
     price: '4,900円',
     taxIncluded: '税込5,292円',
     hasTilde: true,
-    link: '#',
+    link: '/products/product008/',
   },
   {
     id: 'item09',
@@ -95,7 +95,7 @@ const productList: ProductItem[] = [
     title: 'バラエティーセット',
     price: '2,833円',
     taxIncluded: '税込3,060円',
-    link: '#',
+    link: '/products/product009/',
   },
   {
     id: 'item10',
@@ -103,7 +103,7 @@ const productList: ProductItem[] = [
     title: '焦げ目付き\nオリジナルハンバーグセット',
     price: '1,944円',
     taxIncluded: '税込2,100円',
-    link: '#',
+    link: '/products/product010/',
     hasTilde: true,
   },
   {
@@ -112,7 +112,7 @@ const productList: ProductItem[] = [
     title: 'プレミアム和牛赤黒ハンバーグセット',
     price: '3,000円',
     taxIncluded: '税込3,240円',
-    link: '#',
+    link: '/products/product011/',
     hasTilde: true,
   },
 ];
