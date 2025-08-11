@@ -23,7 +23,7 @@ export default function Product009Page() {
       <PageHead title={productData.name} />
       <ProductBreadCrumb name={productData.name} />
       <section className={styles.containerContents}>
-        <ProductTitle name={productData.name} subName={productData.subName} />
+        <ProductTitle name={productData.name} />
         <article>
           <ProductImage name={productData.name} image={productData.image} />
           <div className={styles.wrapTextDetails}>
@@ -59,7 +59,6 @@ export default function Product009Page() {
           </div>
           <ProductPurchase
             name={productData.name}
-            subName={productData.subName}
             code={productData.code}
             price={productData.price}
           />
