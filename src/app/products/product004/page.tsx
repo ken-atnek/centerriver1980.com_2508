@@ -1,6 +1,6 @@
 /* =======================================
  * オリジナルコーンポタージュスープ
- * URL:src/app/products/product003/page.tsx
+ * URL:src/app/products/product004/page.tsx
  * Referenced in: src/app/products/page.tsx
  * Created: 2025-08-05
  * Last updated: 2025-08-05
@@ -18,9 +18,8 @@ import {
   ProductImage,
   ProductPurchase,
 } from '@/components/products/ProductCommon';
-import Image from 'next/image';
 
-export default function Product003Page() {
+export default function Product004Page() {
   return (
     <>
       <PageHead title={productData.name} />
