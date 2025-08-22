@@ -87,13 +87,11 @@ export const ProductPurchase = ({
     const fixed = normalizeQuantity(Number(e.target.value));
     if (fixed !== quantity) setQuantity(fixed);
   };
-
   const handleClick = async () => {
     const q = normalizeQuantity(quantity);
     // まずは数量が正しく取得できているかを確認
     console.log('[add-to-cart] ecId:', ecId, 'quantity:', q);
-    alert(`数量を取得しました: ${q} 個（商品コード: ${ecId}／商品クラスID: ${ecClassId}）`);
-
+    // alert(`数量を取得しました: ${q} 個（商品コード: ${ecId}／商品クラスID: ${ecClassId}）`);
     try {
       const res = await fetch('/online-shop/custom-api/cart/add', {
         method: 'POST',
@@ -109,21 +107,17 @@ export const ProductPurchase = ({
       const text = await res.text();
       let data:  AddCartResponse | null = null;
       try { data = JSON.parse(text); } catch {}
-
       if (!res.ok || !data?.ok) {
         alert((data && data.message) ? data.message : `カート追加に失敗しました (${res.status})`);
         return;
       }
-
-      alert('カートに追加しました');
+      // alert('カートに追加しました');
       // 必要ならここで data.cart.count などを使ってヘッダーのカート数を更新
     } catch (err) {
       console.error(err);
       alert('通信に失敗しました。ネットワークをご確認ください。');
     }
   };
-
-
   return (
   <div className={styles.boxPurchase}>
     <div className={styles.wrapInfo}>
