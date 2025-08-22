@@ -51,7 +51,6 @@ export default function Product10Page() {
           </div>
         </article>
         <BlockChefMovie />
-
         <article>
           <div className={styles.wrapTextSubDetails}>
             <h4>{productData02.section02.title}</h4>
@@ -63,6 +62,8 @@ export default function Product10Page() {
           </div>
           <ProductPurchase
             name={productData02.name}
+            ecId={productData02.ecId}
+            ecClassId={productData02.ecClassId}
             code={productData02.code}
             price={productData02.price}
           />
@@ -70,7 +71,6 @@ export default function Product10Page() {
         <article>
           <div className={styles.wrapTextSubDetails}>
             <h4>{productData03.section02.title}</h4>
-
             <div className={styles.itemText}>
               {productData03.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>
@@ -79,6 +79,8 @@ export default function Product10Page() {
           </div>
           <ProductPurchase
             name={productData03.name}
+            ecId={productData03.ecId}
+            ecClassId={productData03.ecClassId}
             code={productData03.code}
             price={productData03.price}
           />
@@ -86,7 +88,6 @@ export default function Product10Page() {
         <article>
           <div className={styles.wrapTextSubDetails}>
             <h4>{productData04.section02.title}</h4>
-
             <div className={styles.itemText}>
               {productData04.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>
@@ -95,6 +96,8 @@ export default function Product10Page() {
           </div>
           <ProductPurchase
             name={productData04.name}
+            ecId={productData04.ecId}
+            ecClassId={productData04.ecClassId}
             code={productData04.code}
             price={productData04.price}
           />
@@ -102,7 +105,6 @@ export default function Product10Page() {
         <article>
           <div className={styles.wrapTextSubDetails}>
             <h4>{productData05.section02.title}</h4>
-
             <div className={styles.itemText}>
               {productData05.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>
@@ -111,11 +113,12 @@ export default function Product10Page() {
           </div>
           <ProductPurchase
             name={productData05.name}
+            ecId={productData05.ecId}
+            ecClassId={productData05.ecClassId}
             code={productData05.code}
             price={productData05.price}
           />
         </article>
-
         <BlockShopGuide />
       </section>
     </>

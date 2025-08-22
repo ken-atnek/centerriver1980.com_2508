@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product017',
-  ecId: '7-3',
+  ecId: '15',
+  ecClassId: '24',
   code: '7-3',
   name: '焦げ目付きオリジナルハンバーグセット【５個入り】',
   section02: {

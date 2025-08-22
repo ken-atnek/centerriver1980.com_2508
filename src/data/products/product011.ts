@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product011',
-  ecId: '11',
+  ecId: '9999',
+  ecClassId: '9999',
   code: '111',
   name: 'ファミリーセット',
   image: '/images/products/familyset4_s.webp',

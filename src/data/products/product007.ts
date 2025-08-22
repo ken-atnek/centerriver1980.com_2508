@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product007',
-  ecId: '7',
+  ecId: '8',
+  ecClassId: '17',
   code: '11',
   name: 'レフォールスパイス',
   image: '/images/products/img20240507101505225121.webp',

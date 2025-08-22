@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product002',
-  ecId: '2',
+  ecId: '3',
+  ecClassId: '12',
   code: '08',
   name: 'プレミアム和牛赤黒ハンバーグ',
   image: '/images/products/img20230515171624910794.webp',

@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product026',
-  ecId: '8-5',
+  ecId: '23',
+  ecClassId: '32',
   code: '8-5',
   name: 'プレミアム和牛赤黒ハンバーグセット【9個入り】',
   section02: {

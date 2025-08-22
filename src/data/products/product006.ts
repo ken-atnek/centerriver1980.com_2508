@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product006',
-  ecId: '6',
+  ecId: '7',
+  ecClassId: '16',
   code: '06',
   name: '梅肉ソース',
   image: '/images/products/bainiku.webp',

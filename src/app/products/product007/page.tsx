@@ -49,7 +49,6 @@ export default function Product007Page() {
           </div>
         </article>
         <BlockChefMovie />
-
         <article>
           <div className={styles.wrapTextSubDetails}>
             <h4>{productData02.section02.title}</h4>
@@ -61,12 +60,15 @@ export default function Product007Page() {
           </div>
           <ProductPurchase
             name={productData02.name}
+            ecId={productData02.ecId}
+            ecClassId={productData02.ecClassId}
             code={productData02.code}
             price={productData02.price}
           />
         </article>
         <article>
           <div className={styles.wrapTextSubDetails}>
+            <h4>{productData03.section02.title}</h4>
             <div className={styles.itemText}>
               {productData03.section02.text.split('\n').map((line, i) => (
                 <p key={`section02-${i}`}>{line}</p>
@@ -75,11 +77,12 @@ export default function Product007Page() {
           </div>
           <ProductPurchase
             name={productData03.name}
+            ecId={productData03.ecId}
+            ecClassId={productData03.ecClassId}
             code={productData03.code}
             price={productData03.price}
           />
         </article>
-
         <BlockShopGuide />
       </section>
     </>
