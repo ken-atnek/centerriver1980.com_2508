@@ -6,10 +6,11 @@
  * Last updated: 2025-08-05
  * ======================================= */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '@/styles/PageProductsItem.module.scss';
 import Link from 'next/link';
+import { createPortal } from 'react-dom';
 
 type AddCartResponse = {
   ok: boolean;
@@ -75,6 +76,10 @@ export const ProductPurchase = ({
   // 数量の状態を保持
   const [quantity, setQuantity] = useState<number>(1);
   // 入力の正規化とバリデーション（1以上の整数に丸める）
+
+  const [modalMessage, setModalMessage] = useState<string | null>(null);
+  const closeModal = () => setModalMessage(null);
+
   const normalizeQuantity = (v: number) => {
     if (Number.isNaN(v) || v < 1) return 1;
     // 上限を設けたい場合はここで clamp（例: Math.min(v, 999)）
@@ -105,48 +110,95 @@ export const ProductPurchase = ({
         cache: 'no-store',
       });
       const text = await res.text();
-      let data:  AddCartResponse | null = null;
-      try { data = JSON.parse(text); } catch {}
-      if (!res.ok || !data?.ok) {
-        alert((data && data.message) ? data.message : `カート追加に失敗しました (${res.status})`);
-        return;
+      let data: AddCartResponse | null = null;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        if (!res.ok || !data?.ok) {
+          setModalMessage(
+            data && data.message
+              ? data.message
+              : `カート追加に失敗しました (${res.status})`
+          );
+          return;
+        } else {
+          setModalMessage('カートに追加しました');
+        }
       }
-      // alert('カートに追加しました');
       // 必要ならここで data.cart.count などを使ってヘッダーのカート数を更新
     } catch (err) {
       console.error(err);
-      alert('通信に失敗しました。ネットワークをご確認ください。');
+      setModalMessage('通信に失敗しました。ネットワークをご確認ください。');
     }
   };
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
-  <div className={styles.boxPurchase}>
-    <div className={styles.wrapInfo}>
-      <dl>
-        <dt>商品番号</dt>
-        <dd>{code}</dd>
-      </dl>
-      <dl>
-        <dt>商品名</dt>
-        <dd>
-          {name}
-          {subName && <span>{subName}</span>}
-        </dd>
-      </dl>
-      <dl>
-        <dt>価格（税込）</dt>
-        <dd>{price.toLocaleString()}円(税込)</dd>
-      </dl>
+    <div className={styles.boxPurchase}>
+      <div className={styles.wrapInfo}>
+        <dl>
+          <dt>商品番号</dt>
+          <dd>{code}</dd>
+        </dl>
+        <dl>
+          <dt>商品名</dt>
+          <dd>
+            {name}
+            {subName && <span>{subName}</span>}
+          </dd>
+        </dl>
+        <dl>
+          <dt>価格（税込）</dt>
+          <dd>{price.toLocaleString()}円(税込)</dd>
+        </dl>
+      </div>
+      <div className={styles.wrapInput}>
+        <label>
+          購入数量
+          <input
+            type="number"
+            name="quantity"
+            min={1}
+            inputMode="numeric"
+            value={quantity}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          個
+        </label>
+        <input type="hidden" />
+      </div>
+      <button
+        type="button"
+        onClick={handleClick}
+        className={styles.btnAddToCart}
+      >
+        <span>カートに入れる</span>
+      </button>
+      {mounted &&
+        modalMessage &&
+        createPortal(
+          <div className="modalOverlay" onClick={closeModal}>
+            <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+              <p>{modalMessage}</p>
+              {modalMessage === 'カートに追加しました' ? (
+                <div className="modalButtons">
+                  <button onClick={closeModal}>お買い物を続ける</button>
+                  <Link href="/cart/" className={styles.linkButton}>
+                    カートへ進む
+                  </Link>
+                </div>
+              ) : (
+                <button onClick={closeModal}>閉じる</button>
+              )}
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
-    <div className={styles.wrapInput}>
-      <label>
-        購入数量
-        <input type="number" name="quantity" min={1} inputMode="numeric" value={quantity} onChange={handleChange} onBlur={handleBlur} />個
-      </label>
-      <input type="hidden" />
-    </div>
-    <button type="button" onClick={handleClick}>
-      <span>カートに入れる</span>
-    </button>
-  </div>
-);
-}
+  );
+};
