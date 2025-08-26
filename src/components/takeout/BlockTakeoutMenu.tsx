@@ -82,13 +82,7 @@ const BlockTakeoutMenu = () => {
       },
       {
         image: Image06,
-        catch: (
-          <>
-            おいしく
-            <br />
-            リニューアル
-          </>
-        ),
+        catch: <>おいしくリニューアル</>,
         title: <>ハンバーグ＆焼肉</>,
         alt: 'ハンバーグ＆焼肉',
         price: 780,

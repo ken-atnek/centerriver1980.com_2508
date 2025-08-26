@@ -116,19 +116,20 @@
                 }
                 .catch {
                     position: absolute;
-                    bottom: calc(100% - 0.2em);
+                    bottom: calc(100% + 0.2em);
                     left: 50%;
                     translate: -50%;
-                    background-color: $base-green;
+                    background-color: #df0001;
                     color: #fff;
-                    padding: 0.1em 1em;
+                    padding: 0.4em 1em;
                     text-align: center;
-                    @include Serif;
-                    font-size: FZ(20);
+                    font-size: FZ(16);
+                    font-weight: 500;
                     width: max-content;
                     line-height: 1.4em;
                     letter-spacing: 0.08em;
-                    rotate: -5deg;
+                    border-radius: 5px;
+                    // rotate: -5deg;
                     @include sp {
                         font-size: FZ(16);
                         bottom: calc(100% - 4vw);
@@ -137,7 +138,7 @@
                 .itemImage {
                     width: 100%;
                     display: grid;
-                    place-content: center;
+                    place-content: center top;
                 }
                 h5 {
                     color: #664223;
