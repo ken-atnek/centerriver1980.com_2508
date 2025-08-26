@@ -57,6 +57,8 @@ export default function Product006Page() {
           </div>
           <ProductPurchase
             name={productData02.name}
+            ecId={productData02.ecId}
+            ecClassId={productData02.ecClassId}
             code={productData02.code}
             price={productData02.price}
           />
@@ -71,6 +73,8 @@ export default function Product006Page() {
           </div>
           <ProductPurchase
             name={productData03.name}
+            ecId={productData03.ecId}
+            ecClassId={productData03.ecClassId}
             code={productData03.code}
             price={productData03.price}
           />
@@ -82,6 +86,8 @@ export default function Product006Page() {
             <h4>{productExtra.section01.title}</h4>
             <ProductPurchase
               name={productExtra.name}
+              ecId={productExtra.ecId}
+              ecClassId={productExtra.ecClassId}
               code={productExtra.code}
               price={productExtra.price}
             />

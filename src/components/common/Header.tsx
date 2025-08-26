@@ -114,7 +114,7 @@ const Header = () => {
           </div>
         </nav>
         <div className={styles.boxSns}>
-          <ExternalLink href="#" aria-label="オンラインショップカートを見る">
+          <ExternalLink href="https://demo-centerriver1980.tuna-pic.co.jp/online-shop/cart" aria-label="オンラインショップカートを見る">
             <Image src={IconCart} alt="カート" />
           </ExternalLink>
           <ExternalLink

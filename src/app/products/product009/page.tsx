@@ -59,11 +59,12 @@ export default function Product009Page() {
           </div>
           <ProductPurchase
             name={productData.name}
+            ecId={productData.ecId}
+            ecClassId={productData.ecClassId}
             code={productData.code}
             price={productData.price}
           />
         </article>
-
         <BlockShopGuide />
       </section>
     </>

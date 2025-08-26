@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product001',
-  ecId: '1',
+  ecId: '2',
+  ecClassId: '11',
   code: '01',
   name: '焦げ目付きオリジナルハンバーグ',
   image: '/images/products/original_s.webp',

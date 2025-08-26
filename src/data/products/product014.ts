@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product014',
-  ecId: '9',
+  ecId: '13',
+  ecClassId: '22',
   code: '9',
   name: 'ダブルハンバーグセット',
   subName: '(焦げ目付きハンバーグ＆プレミアム和牛赤黒ハンバーグ)',

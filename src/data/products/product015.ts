@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product015',
-  ecId: '7-11',
+  ecId: '14',
+  ecClassId: '23',
   code: '7-11',
   name: 'オリジナルハンバーグ バラエティーセット',
   image: '/images/products/variety_s.webp',

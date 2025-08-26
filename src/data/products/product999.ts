@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product999',
-  ecId: '999',
+  ecId: '25',
+  ecClassId: '34',
   code: '10',
   name: '梱包箱',
   image: '/images/products/detail_633a4c28c495b.webp',

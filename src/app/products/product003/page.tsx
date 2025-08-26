@@ -56,11 +56,12 @@ export default function Product003Page() {
           </div>
           <ProductPurchase
             name={productData.name}
+            ecId={productData.ecId}
+            ecClassId={productData.ecClassId}
             code={productData.code}
             price={productData.price}
           />
         </article>
-
         <hr className={styles.hr} />
         <article>
           <ProductImage name={productExtra.name} image={productExtra.image} />
@@ -68,6 +69,8 @@ export default function Product003Page() {
             <h4>{productExtra.section01.title}</h4>
             <ProductPurchase
               name={productExtra.name}
+              ecId={productExtra.ecId}
+              ecClassId={productExtra.ecClassId}
               code={productExtra.code}
               price={productExtra.price}
             />

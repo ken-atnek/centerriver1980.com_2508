@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product004',
-  ecId: '4',
+  ecId: '5',
+  ecClassId: '14',
   code: '04',
   name: 'ガーリックソース',
   image: '/images/products/garlic.webp',

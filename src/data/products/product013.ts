@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product013',
-  ecId: '7-2',
+  ecId: '12',
+  ecClassId: '21',
   code: '7-2',
   name: 'ファミリーセット【6人前】',
   section02: {

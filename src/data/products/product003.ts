@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product003',
-  ecId: '3',
+  ecId: '4',
+  ecClassId: '13',
   code: '03',
   name: 'オリジナルコーンポタージュスープ',
   image: '/images/products/soup_s.webp',

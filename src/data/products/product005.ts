@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product005',
-  ecId: '5',
+  ecId: '6',
+  ecClassId: '15',
   code: '05',
   name: 'レホールソース',
   image: '/images/products/lefort.webp',

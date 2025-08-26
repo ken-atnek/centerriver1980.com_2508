@@ -7,6 +7,8 @@
 
 const productData = {
   id: 'product016',
+  ecId: '9999',
+  ecClassId: '9999',
   name: '焦げ目付きオリジナルハンバーグセット',
   image: '/images/products/originalset5_s.webp',
   section01: {

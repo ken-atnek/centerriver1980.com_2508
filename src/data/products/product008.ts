@@ -7,7 +7,8 @@
 
 const productData = {
   id: 'product008',
-  ecId: '8',
+  ecId: '9999',
+  ecClassId: '9999',
   code: '121',
   name: 'オリジナルドレッシング',
   image: '/images/products/img20240507101517296131.webp',
