@@ -114,16 +114,19 @@ export const ProductPurchase = ({
       try {
         data = JSON.parse(text);
       } catch {
-        if (!res.ok || !data?.ok) {
-          setModalMessage(
-            data && data.message
-              ? data.message
-              : `カート追加に失敗しました (${res.status})`
-          );
-          return;
-        } else {
-          setModalMessage('カートに追加しました');
-        }
+        console.log('[add-cart] JSON parse error, response text:', text);
+        setModalMessage(`カート追加に失敗しました. (${res.status})`);
+        return;
+      }
+      if (!res.ok || !data?.ok) {
+        setModalMessage(
+          data && data.message
+            ? data.message
+            : `カート追加に失敗しました (${res.status})`
+        );
+        return;
+      } else {
+        setModalMessage('カートに追加しました');
       }
       // 必要ならここで data.cart.count などを使ってヘッダーのカート数を更新
     } catch (err) {
@@ -188,7 +191,7 @@ export const ProductPurchase = ({
               {modalMessage === 'カートに追加しました' ? (
                 <div className="modalButtons">
                   <button onClick={closeModal}>お買い物を続ける</button>
-                  <Link href="/cart/" className={styles.linkButton}>
+                  <Link href="https://demo-centerriver1980.tuna-pic.co.jp/online-shop/cart" className={styles.linkButton}>
                     カートへ進む
                   </Link>
                 </div>
