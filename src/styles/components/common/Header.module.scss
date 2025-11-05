@@ -135,6 +135,7 @@
                 gap: 0 6vw;
             }
             a {
+                position: relative;
                 font-size: inherit;
                 width: 2em;
                 aspect-ratio: 1;
@@ -144,6 +145,23 @@
                 img {
                     width: 100%;
                     aspect-ratio: 1;
+                }
+                &.linkCart {
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 2rem;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        background-color: red;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: FZ(12);
+                        font-weight: 700;
+                    }
                 }
             }
         }

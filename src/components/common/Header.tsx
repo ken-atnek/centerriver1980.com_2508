@@ -19,6 +19,7 @@ import ExternalLink from '@/components/common/ExternalLink';
 const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [cartCount, setCartCount] = useState<number>(0);
   const navRef = useRef<HTMLDivElement>(null);
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -76,6 +77,52 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // カート数をAPIから取得する関数
+  const fetchCartCount = async () => {
+    try {
+      const res = await fetch('/online-shop/custom-api/cart/count', {
+      // const res = await fetch('https://demo-centerriver1980.tuna-pic.co.jp/online-shop/custom-api/cart/count', {
+        method: 'GET',
+        credentials: 'same-origin',
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data?.ok && typeof data.count === 'number') {
+          setCartCount(data.count >= 0 ? data.count : 0);
+        } else {
+          console.warn('カート数APIの応答形式が不正です:', data);
+        }
+      } else if (res.status === 404) {
+        console.info('カート数API未実装 (404) - 開発中のため正常です');
+        // API未実装時は現在の値を維持
+      } else {
+        console.warn('カート数API呼び出しエラー:', res.status);
+      }
+    } catch (error) {
+      console.warn('カート数の取得に失敗しました:', error);
+      // ネットワークエラー等は現在の値を維持
+    }
+  };
+
+  // カート数の初期化とCustomEvent受信
+  useEffect(() => {
+    // 初回読み込み時にAPIからカート数を取得
+    fetchCartCount();
+
+    // CustomEventリスナーを設定（カート変更通知を受信）
+    const handleCartChange = () => {
+      fetchCartCount(); // APIから最新のカート数を取得
+    };
+
+    window.addEventListener('cartCountChanged', handleCartChange);
+    // 5秒ごとに定期的にカート数を同期（EC-CUBE側での変更を検知）
+    const interval = setInterval(fetchCartCount, 5000);
+    return () => {
+      window.removeEventListener('cartCountChanged', handleCartChange);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <header
       className={`${styles.containerHeader} ${isFixed ? styles['is-fixed'] : ''}`}
@@ -114,9 +161,10 @@ const Header = () => {
           </div>
         </nav>
         <div className={styles.boxSns}>
-          <ExternalLink href="https://demo-centerriver1980.tuna-pic.co.jp/online-shop/cart" aria-label="オンラインショップカートを見る">
+          <Link href="https://demo-centerriver1980.tuna-pic.co.jp/online-shop/cart/" aria-label="オンラインショップカートを見る" className={styles.linkCart}>
+            {cartCount > 0 && <span>{cartCount}</span>}
             <Image src={IconCart} alt="カート" />
-          </ExternalLink>
+          </Link>
           <ExternalLink
             href="https://x.com/centerriver01"
             aria-label="センターリバーのエックス"
