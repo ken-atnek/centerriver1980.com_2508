@@ -80,6 +80,12 @@ export const ProductPurchase = ({
   const [modalMessage, setModalMessage] = useState<string | null>(null);
   const closeModal = () => setModalMessage(null);
 
+  // ヘッダーにカート数更新を通知する関数
+  const notifyCartUpdate = () => {
+    // CustomEventでヘッダーにカート数の再取得を指示
+    window.dispatchEvent(new CustomEvent('cartCountChanged'));
+  };
+
   const normalizeQuantity = (v: number) => {
     if (Number.isNaN(v) || v < 1) return 1;
     // 上限を設けたい場合はここで clamp（例: Math.min(v, 999)）
@@ -99,6 +105,7 @@ export const ProductPurchase = ({
     // alert(`数量を取得しました: ${q} 個（商品コード: ${ecId}／商品クラスID: ${ecClassId}）`);
     try {
       const res = await fetch('/online-shop/custom-api/cart/add', {
+      // const res = await fetch('https://demo-centerriver1980.tuna-pic.co.jp/online-shop/custom-api/cart/add', {
         method: 'POST',
         credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
@@ -114,18 +121,22 @@ export const ProductPurchase = ({
       try {
         data = JSON.parse(text);
       } catch {
-        if (!res.ok || !data?.ok) {
-          setModalMessage(
-            data && data.message
-              ? data.message
-              : `カート追加に失敗しました (${res.status})`
-          );
-          return;
-        } else {
-          setModalMessage('カートに追加しました');
-        }
+        console.log('[add-cart] JSON parse error, response text:');
+        setModalMessage(`カート追加に失敗しました. (${res.status})`);
+        return;
       }
-      // 必要ならここで data.cart.count などを使ってヘッダーのカート数を更新
+      if (!res.ok || !data?.ok) {
+        setModalMessage(
+          data && data.message
+            ? data.message
+            : `カート追加に失敗しました (${res.status})`
+        );
+        return;
+      } else {
+        setModalMessage('カートに追加しました');
+        // ヘッダーにカート数の再取得を指示
+        notifyCartUpdate();
+      }
     } catch (err) {
       console.error(err);
       setModalMessage('通信に失敗しました。ネットワークをご確認ください。');
@@ -188,7 +199,7 @@ export const ProductPurchase = ({
               {modalMessage === 'カートに追加しました' ? (
                 <div className="modalButtons">
                   <button onClick={closeModal}>お買い物を続ける</button>
-                  <Link href="/cart/" className={styles.linkButton}>
+                  <Link href="https://demo-centerriver1980.tuna-pic.co.jp/online-shop/cart" className={styles.linkButton}>
                     カートへ進む
                   </Link>
                 </div>

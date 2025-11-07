@@ -184,6 +184,14 @@
         display: flex;
         max-width: $articleMaxWidth;
         gap: 0 3em;
+        @include sp {
+            flex-direction: column;
+        }
+    }
+    .boxImage {
+        @include sp {
+            width: 100%;
+        }
     }
     .blockImage {
         position: relative;
@@ -204,6 +212,9 @@
         gap: 2em 0;
         flex: 1;
         width: 50%;
+        @include sp {
+            width: 100%;
+        }
         .itemH4 {
             font-size: inherit;
         }
@@ -213,6 +224,9 @@
             text-align: justify;
             line-height: 1.6em;
             letter-spacing: 0.08em;
+            @include sp {
+                margin-top: 0.5em;
+            }
         }
         .itemText {
             font-size: inherit;
@@ -227,6 +241,9 @@
     .wrapTextSubDetails {
         width: 50%;
         font-size: inherit;
+        @include sp {
+            width: 100%;
+        }
         .itemH4 {
             font-size: inherit;
         }
@@ -259,6 +276,9 @@
             text-align: justify;
             line-height: 1.6em;
             letter-spacing: 0.08em;
+            @include sp {
+                margin-top: 0.5em;
+            }
         }
         .boxPurchase {
             width: 100%;
