@@ -182,6 +182,10 @@
             line-height: 1.6em;
             text-align: justify;
             margin-bottom: 5em;
+            div,
+            span {
+                font-size: inherit;
+            }
             @include sp {
                 margin-top: 2vw;
                 margin-bottom: 4vw;

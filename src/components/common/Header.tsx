@@ -36,7 +36,6 @@ const Header = () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
-
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (
@@ -51,19 +50,16 @@ const Header = () => {
     return () =>
       document.removeEventListener('click', handleOutsideClick, true);
   }, [isOpen]);
-
   // Helper function to determine if the item is the current page
   const isCurrent = (href: string): boolean => {
     if (pathname === '/') return false;
     return pathname === href;
   };
-
   // Fixed header state and ref
   const [isFixed, setIsFixed] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   // Store the original Y-offset of the header
   const headerOffsetRef = useRef(0);
-
   useEffect(() => {
     // Set the original offsetTop of the header on mount
     headerOffsetRef.current = headerRef.current?.offsetTop ?? 0;
@@ -76,12 +72,10 @@ const Header = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   // カート数をAPIから取得する関数
   const fetchCartCount = async () => {
     try {
       const res = await fetch('/online-shop/custom-api/cart/count', {
-      // const res = await fetch('https://demo-centerriver1980.tuna-pic.co.jp/online-shop/custom-api/cart/count', {
         method: 'GET',
         credentials: 'same-origin',
       });
@@ -103,17 +97,14 @@ const Header = () => {
       // ネットワークエラー等は現在の値を維持
     }
   };
-
   // カート数の初期化とCustomEvent受信
   useEffect(() => {
     // 初回読み込み時にAPIからカート数を取得
     fetchCartCount();
-
     // CustomEventリスナーを設定（カート変更通知を受信）
     const handleCartChange = () => {
       fetchCartCount(); // APIから最新のカート数を取得
     };
-
     window.addEventListener('cartCountChanged', handleCartChange);
     // 5秒ごとに定期的にカート数を同期（EC-CUBE側での変更を検知）
     const interval = setInterval(fetchCartCount, 5000);
@@ -161,7 +152,7 @@ const Header = () => {
           </div>
         </nav>
         <div className={styles.boxSns}>
-          <Link href="https://demo-centerriver1980.tuna-pic.co.jp/online-shop/cart/" aria-label="オンラインショップカートを見る" className={styles.linkCart}>
+          <Link href="https://centerriver1980.com/online-shop/cart/" aria-label="オンラインショップカートを見る" className={styles.linkCart}>
             {cartCount > 0 && <span>{cartCount}</span>}
             <Image src={IconCart} alt="カート" />
           </Link>
