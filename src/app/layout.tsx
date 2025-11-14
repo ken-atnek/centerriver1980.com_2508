@@ -9,19 +9,18 @@ import type { Metadata } from 'next';
 import '@/styles/globals.scss';
 import { Noto_Sans_JP } from 'next/font/google';
 import Footer from '@/components/common/Footer';
+import { isRealProduction } from '@/lib/env';
 const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
   display: 'swap',
 });
-// 実際の本番環境かどうかを判定
-const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
 
 // 本番のみ metadataBase を設定
 const metadataBase = isRealProduction
   ? new URL(
       process.env.NEXT_PUBLIC_METADATA_BASE ||
-        'https://www.shirakawa-chuo-cc.com/'
+        'https://centerriver1980.com'
     )
   : undefined;
 

@@ -16,6 +16,12 @@ import IconCart from '@/assets/images/icon/cart.webp';
 import IconInsta from '@/assets/images/icon/insta.webp';
 import IconX from '@/assets/images/icon/x.webp';
 import ExternalLink from '@/components/common/ExternalLink';
+import { isRealProduction } from '@/lib/env';
+
+//カートURLの切替 (本番用 or テスト用)
+const seCartUrl = isRealProduction ? 'https://centerriver1980.com' : 'https://demo-centerriver1980.tuna-pic.co.jp';
+
+
 const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -152,7 +158,7 @@ const Header = () => {
           </div>
         </nav>
         <div className={styles.boxSns}>
-          <Link href="https://centerriver1980.com/online-shop/cart/" aria-label="オンラインショップカートを見る" className={styles.linkCart}>
+          <Link href={`${seCartUrl}/online-shop/cart`} aria-label="オンラインショップカートを見る" className={styles.linkCart}>
             {cartCount > 0 && <span>{cartCount}</span>}
             <Image src={IconCart} alt="カート" />
           </Link>
