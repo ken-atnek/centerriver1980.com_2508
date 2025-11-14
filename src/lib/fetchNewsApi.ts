@@ -1,3 +1,5 @@
+
+import { isRealProduction } from '@/lib/env';
 import { NewsItem } from '@/types/news';
 
 type ApiNewsItem = {
@@ -10,10 +12,13 @@ type ApiNewsItem = {
   k_total?: number;
 };
 
+//apiUrlの切替 (本番用 or テスト用)
+const setApiUrl = isRealProduction ? 'https://centerriver1980.com' : 'https://demo-centerriver1980.tuna-pic.co.jp';
+
 export async function fetchNews(
   limit = 3,
   offset = 0,
-  apiUrl = `https://centerriver1980.com/api/news/?limit=${limit}&offset=${offset}`
+  apiUrl = `${setApiUrl}/api/news/?limit=${limit}&offset=${offset}`
 ): Promise<{ news: NewsItem[]; total: number }> {
   try {
     const res = await fetch(apiUrl);
