@@ -14,7 +14,7 @@ import { createPortal } from 'react-dom';
 import { isRealProduction } from '@/lib/env';
 
 //カートURLの切替 (本番用 or テスト用)
-const seCartUrl = isRealProduction ? 'https://centerriver1980.com' : 'https://demo-centerriver1980.tuna-pic.co.jp';
+const setCartUrl = isRealProduction ? 'https://centerriver1980.com' : 'https://demo-centerriver1980.tuna-pic.co.jp';
 
 type AddCartResponse = {
   ok: boolean;
@@ -197,7 +197,7 @@ export const ProductPurchase = ({
               {modalMessage === 'カートに追加しました' ? (
                 <div className="modalButtons">
                   <button onClick={closeModal}>お買い物を続ける</button>
-                  <Link href={`${seCartUrl}/online-shop/cart`} className={styles.linkButton}>
+                  <Link href={`${setCartUrl}/online-shop/cart`} className={styles.linkButton}>
                     カートへ進む
                   </Link>
                 </div>
