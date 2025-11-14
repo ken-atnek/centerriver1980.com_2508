@@ -1,0 +1,11 @@
+// import { StaticImageData } from "next/image";
+// import { ReactNode } from "react";
+
+export type NewsItem = {
+  id: string;
+  date: string;
+  title: string;
+  body: {
+    content: string;
+  };
+};
