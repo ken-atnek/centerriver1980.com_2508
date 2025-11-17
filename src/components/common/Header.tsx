@@ -158,10 +158,10 @@ const Header = () => {
           </div>
         </nav>
         <div className={styles.boxSns}>
-          {/* <Link href={`${setCartUrl}/online-shop/cart`} aria-label="オンラインショップカートを見る" className={styles.linkCart}>
+          <Link href={`${setCartUrl}/online-shop/cart`} aria-label="オンラインショップカートを見る" className={styles.linkCart}>
             {cartCount > 0 && <span>{cartCount}</span>}
             <Image src={IconCart} alt="カート" />
-          </Link> */}
+          </Link>
           <ExternalLink
             href="https://x.com/centerriver01"
             aria-label="センターリバーのエックス"
