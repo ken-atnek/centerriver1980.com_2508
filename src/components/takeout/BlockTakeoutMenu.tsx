@@ -67,7 +67,7 @@ const BlockTakeoutMenu = () => {
         image: Image04,
         title: <>月見ハンバーグカレー</>,
         alt: '月見ハンバーグカレー',
-        price: 650,
+        price: 680,
       },
       {
         image: Image05,
