@@ -46,7 +46,7 @@ export default function PageConcept() {
             セットメニューに関しましては、「その他のメニュー」よりご覧ください。
           </p>
           <ExternalLink
-            href="/data/pdf/menu_20241001.pdf"
+            href="/data/pdf/menu_20260131.pdf"
             className={styles.linkPdf}
             aria-label="センターリバーのメニュー"
           >
