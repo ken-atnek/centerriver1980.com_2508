@@ -17,10 +17,10 @@ type ItemPrice = {
 const BoxHamburger = () => {
   const itemsPrice: ItemPrice[] = useMemo(
     () => [
-      { weight: 150, price: 1030 },
-      { weight: 200, price: 1130 },
-      { weight: 300, price: 1450 },
-      { weight: 400, price: 1730 },
+      { weight: 150, price: 1130 },
+      { weight: 200, price: 1230 },
+      { weight: 300, price: 1550 },
+      { weight: 400, price: 1830 },
     ],
     []
   );
@@ -74,8 +74,8 @@ const BoxHamburger = () => {
             <h5>トマトチーズハンバーグ</h5>
             <div className={styles.wrpPrice}>
               <span>単品</span>
-              <span>1,230円</span>
-              <span>（税込1,353円）</span>
+              <span>1,380円</span>
+              <span>（税込1,518円）</span>
             </div>
             <p>子供や女性に大人気！</p>
           </div>

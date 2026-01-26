@@ -25,17 +25,17 @@ type ImageList = {
 const BoxSteak = () => {
   const itemsPrice: ItemPrice[] = useMemo(
     () => [
-      { weight: 150, price: 1370 },
-      { weight: 200, price: 1580 },
-      { weight: 300, price: 1980 },
+      { weight: 150, price: 1680 },
+      { weight: 200, price: 1980 },
+      { weight: 300, price: 2750 },
     ],
     []
   );
   const imageList: ImageList[] = useMemo(
     () => [
-      { image: ImageSteak02, title: '牛ヒレステーキ', price: 2530 },
-      { image: ImageSteak03, title: '牛サーロインステーキ', price: 2530 },
-      { image: ImageSteak04, title: '赤鶏香草焼き', price: 1630 },
+      { image: ImageSteak02, title: '牛ヒレステーキ', price: 2880 },
+      { image: ImageSteak03, title: '牛サーロインステーキ', price: 2880 },
+      { image: ImageSteak04, title: '赤鶏香草焼き', price: 1880 },
     ],
     []
   );

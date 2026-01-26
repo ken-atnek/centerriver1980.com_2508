@@ -10,7 +10,7 @@ import styles from '@/styles/PageConcept.module.scss';
 import ImageCombi01 from '@/assets/images/concept/combi01.webp';
 import ImageCombi02 from '@/assets/images/concept/combi02.webp';
 import ImageCombi03 from '@/assets/images/concept/combi03.webp';
-import ImageCombi04 from '@/assets/images/concept/combi04.webp';
+// import ImageCombi04 from '@/assets/images/concept/combi04.webp';
 import ImageCombi05 from '@/assets/images/concept/combi05.webp';
 import ImageCombi06 from '@/assets/images/concept/combi06.webp';
 import { useMemo } from 'react';
@@ -19,28 +19,28 @@ import Image from 'next/image';
 type ImageList = {
   image: StaticImageData;
   title: string;
-  text?: string;
+  //text?: string;
   price: number;
 };
 const BoxCombi = () => {
   const imageList: ImageList[] = useMemo(
     () => [
-      { image: ImageCombi01, title: 'ハンバーグ＆ステーキ', price: 1430 },
-      { image: ImageCombi02, title: 'ハンバーグ＆エビフライ', price: 1530 },
-      { image: ImageCombi03, title: 'ハンバーグ＆エビグラタン', price: 1530 },
-      {
-        image: ImageCombi04,
-        title: 'カウボーイ',
-        text: 'ハンバーグ＆コロコロステーキ',
-        price: 1530,
-      },
+      { image: ImageCombi01, title: 'ハンバーグ＆ステーキ', price: 1580 },
+      { image: ImageCombi02, title: 'ハンバーグ＆エビフライ', price: 1680 },
+      { image: ImageCombi03, title: 'ハンバーグ＆エビグラタン', price: 1680 },
+      // {
+      //   image: ImageCombi04,
+      //   title: 'カウボーイ',
+      //   text: 'ハンバーグ＆コロコロステーキ',
+      //   price: 1530,
+      // },
       {
         image: ImageCombi05,
-        title: 'テキサス',
-        text: 'ハンバーグ＆ヒレステーキ',
-        price: 1630,
+        title: 'ハンバーグ＆ヒレステーキ',
+        //text: 'ハンバーグ＆ヒレステーキ',
+        price: 1980,
       },
-      { image: ImageCombi06, title: 'ハンバーグ＆赤鶏香草焼き', price: 1630 },
+      { image: ImageCombi06, title: 'ハンバーグ＆赤鶏香草焼き', price: 1830 },
     ],
     []
   );
@@ -61,7 +61,7 @@ const BoxCombi = () => {
             </div>
             <h5>
               {item.title}
-              {item.text && <span>（{item.text}）</span>}
+              {/* {item.text && <span>（{item.text}）</span>} */}
             </h5>
             <div className={styles.price}>
               単品
