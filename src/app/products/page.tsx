@@ -49,6 +49,9 @@ export default function PageProducts() {
           <br />
           各種クレジット払いや他県への発送も承っております。
         </p>
+        <p className={styles.notice}>
+          セット料金は割引価格でご提供いたしております。
+        </p>
         <BlockChefMovie />
         <BlockProductList />
         <BlockShopGuide />

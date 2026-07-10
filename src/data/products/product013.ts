@@ -15,7 +15,7 @@ const productData = {
     title: 'ファミリーセット【6人前】',
     text: '【セット内容】　オリジナルハンバーグ×6、ポタージュスープ×3',
   },
-  price: 3810,
+  price: 3750,
 };
 
 export default productData;

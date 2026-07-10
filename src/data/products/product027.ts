@@ -15,7 +15,7 @@ const productData = {
     title: 'プレミアム和牛赤黒ハンバーグセット【10個入り】',
     text: '【セット内容】　プレミアム和牛赤黒ハンバーグ 130g×10\n※プレミアム和牛赤黒ハンバーグ1個につき、ガーリックソースの小袋（10g）が付属します。',
   },
-  price: 6264,
+  price: 6550,
 };
 
 export default productData;

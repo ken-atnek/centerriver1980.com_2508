@@ -59,11 +59,24 @@
         font-weight: 700;
         letter-spacing: 0.08em;
         line-height: 1.8em;
-        margin-bottom: 1em;
         @include sp {
             font-size: FZ(18);
             letter-spacing: 0.04em;
             line-height: 1.6em;
+        }
+    }
+    .notice {
+        margin-bottom: 1em;
+        text-align: center;
+        @include Serif;
+        font-size: FZ(30);
+        font-weight: 700;
+        margin-top: 0.5em;
+        color: #c13333;
+        letter-spacing: 0.08em;
+        text-decoration: underline 1px solid;
+        @include sp {
+            font-size: FZ(18);
         }
     }
 }

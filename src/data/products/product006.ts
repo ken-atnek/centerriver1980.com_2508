@@ -19,7 +19,7 @@ const productData = {
   section02: {
     text: '【内容量】　120ml\n【原材料】　梅肉、醤油、みりん、酒、調味料（アミノ酸等）\n【アレルギー表示】　大豆、小麦\n【お届け方法】　ハンバーグと同梱の場合、クール便での配送となります\n【保存方法】　冷蔵\n【賞味期限】　個包装に記載',
   },
-  price: 420,
+  price: 443,
 };
 
 export default productData;
