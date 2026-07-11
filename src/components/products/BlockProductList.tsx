@@ -93,8 +93,8 @@ const productList: ProductItem[] = [
     id: 'item09',
     image: '/images/products/variety_s.webp',
     title: 'バラエティーセット',
-    price: '2,731円',
-    taxIncluded: '税込2,950円',
+    price: '2,741円',
+    taxIncluded: '税込2,960円',
     link: '/products/product009/',
   },
   {
