@@ -12,7 +12,7 @@ export type NavMenuItem = {
 
 export const navMenu: NavMenuItem[] = [
   { href: '/concept/', label: '当店のこだわり&メニュー' },
-  { href: '/products/', label: 'オンラインショップ' },
+  // { href: '/products/', label: 'オンラインショップ' },
   { href: '/takeout/', label: 'センターリバーのお弁当' },
   { href: '/company/', label: ' 店舗案内 / 会社概要' },
 ];

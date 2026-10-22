@@ -19,8 +19,9 @@ import ExternalLink from '@/components/common/ExternalLink';
 import { isRealProduction } from '@/lib/env';
 
 //カートURLの切替 (本番用 or テスト用)
-const setCartUrl = isRealProduction ? 'https://centerriver1980.com' : 'https://demo-centerriver1980.tuna-pic.co.jp';
-
+const setCartUrl = isRealProduction
+  ? 'https://centerriver1980.com'
+  : 'https://demo-centerriver1980.tuna-pic.co.jp';
 
 const Header = () => {
   const pathname = usePathname();
@@ -158,10 +159,14 @@ const Header = () => {
           </div>
         </nav>
         <div className={styles.boxSns}>
-          <Link href={`${setCartUrl}/online-shop/cart`} aria-label="オンラインショップカートを見る" className={styles.linkCart}>
+          {/* <Link
+            href={`${setCartUrl}/online-shop/cart`}
+            aria-label="オンラインショップカートを見る"
+            className={styles.linkCart}
+          >
             {cartCount > 0 && <span>{cartCount}</span>}
             <Image src={IconCart} alt="カート" />
-          </Link>
+          </Link> */}
           <ExternalLink
             href="https://x.com/centerriver01"
             aria-label="センターリバーのエックス"

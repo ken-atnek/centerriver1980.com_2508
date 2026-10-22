@@ -34,6 +34,7 @@ export default function Home() {
       </section>
       <Header />
       <section className={styles.containerContents}>
+        <BlockNews />
         <article className={styles.blockCommitment}>
           <h3>センターリバーのこだわり</h3>
           <p className={styles.sidebarH3}>COMMITMENT</p>
@@ -44,7 +45,7 @@ export default function Home() {
         </article>
         <BlockMenu />
         <BlockOnlineShop />
-        <BlockNews />
+
         <article className={styles.blockShopList}>
           <div className={styles.boxText}>
             <h3>店舗一覧</h3>
