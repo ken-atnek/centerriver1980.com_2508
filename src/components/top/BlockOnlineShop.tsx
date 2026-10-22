@@ -7,7 +7,7 @@
 import styles from '@/styles/PageTop.module.scss';
 import Image from 'next/image';
 import { useMemo } from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const BlockOnlineShop = () => {
   const ListData = useMemo(
@@ -62,9 +62,14 @@ const BlockOnlineShop = () => {
           </li>
         ))}
       </ul>
-      <Link href="/products/" className={styles.itemPageLink}>
+      {/* <Link href="/products/" className={styles.itemPageLink}>
         <span>商品一覧</span>
-      </Link>
+      </Link> */}
+      <p className={styles.notice}>
+        現在、システムメンテナンスのため、オンライン販売を一時停止しております。
+        <br className="pc" />
+        ご不便をおかけいたしますが、何卒ご理解のほどよろしくお願いいたします。
+      </p>
     </article>
   );
 };

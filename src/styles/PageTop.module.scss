@@ -270,6 +270,19 @@
                 }
             }
         }
+        .notice {
+            font-size: FZ(18);
+            font-weight: 500;
+            color: rgb(170, 5, 5);
+            letter-spacing: 0.04em;
+            line-height: 1.4;
+            border: 1px solid;
+            padding: 0.5em 2em;
+            @include sp {
+                font-size: 3.4vw;
+                padding: 2vw 4vw;
+            }
+        }
     }
 
     // ニュース
